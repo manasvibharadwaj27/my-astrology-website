@@ -1,32 +1,96 @@
-<h1 align="center" id="title">Astrology-Website</h1>
+# 🔮 Astro Shree - Astrology Consultation Website
 
-<p align="center"><img src="https://socialify.git.ci/D-Majumder/Astrology-Website/image?forks=1&amp;issues=1&amp;language=1&amp;name=1&amp;owner=1&amp;pulls=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+Astro Shree is a modern astrology website designed to provide users with spiritual guidance, daily horoscope insights, basic kundli analysis, vastu tips, gemstone recommendations, and online consultation booking.
 
-<p id="description">AstraJyoti is a versatile and ready-to-use website template designed specifically for Vedic astrologers. With its professional aesthetic and seamless adaptability across all devices—whether phones tablets or computers—it provides an accessible platform for astrologers to connect with clients effortlessly. The design incorporates beautiful Indian cultural elements enhancing the authenticity and appeal of the site. It includes dedicated sections to showcase astrology services daily horoscopes (Rashifal) client testimonials and frequently asked questions ensuring comprehensive engagement. Clients can easily reach out via a contact form or a convenient WhatsApp button. Built using HTML Tailwind CSS and JavaScript the template delivers a modern responsive experience. Getting started is simple—just download (clone) the files and open index.html in a browser to preview the layout. Customization is straightforward allowing users to modify text images and even daily horoscope updates within the JavaScript section. Additionally astrologers can personalize booking links and contact details to match their preferences. This thoughtfully crafted template makes it easy to bring astrology services online with style and functionality.</p>
+## ✨ Features
 
-<p align="center"><img src="https://img.shields.io/badge/Astra-Jyoti-red" alt="shields"></p>
+* 🔮 Basic Kundli Reading
+* 💞 Match Making Compatibility Check
+* 🏡 Basic Vastu Guidance
+* 💎 Gemstone Suggestions
+* 🌙 Daily Rashifal (Horoscope)
+* 📅 Online Consultation Booking
+* 📱 WhatsApp Booking Integration
+* 📧 Contact Form Support
+* 🎨 Responsive Modern UI
 
-<h2>🚀 Demo</h2>
+## 🛠️ Technologies Used
 
-[https://amiastrobaba.pages.dev/](https://amiastrobaba.pages.dev/)
+* HTML5
+* CSS3
+* Tailwind CSS
+* JavaScript
+* Formspree
+* WhatsApp API
 
-  
-  
-<h2>🧐 Features</h2>
+## 🚀 Live Website
 
-Here're some of the project's best features:
+https://astro-shree.com/
 
-*   Beautiful design with Indian cultural touches.
-*   Sections to showcase your astrology services daily horoscopes (Rashifal) client testimonials and FAQs.
-*   Easy ways for clients to contact you including a contact form and WhatsApp button.
-*   Built with HTML Tailwind CSS and JavaScript for a modern look and smooth experience.
+## 📋 Services
 
-<h2>🛠️ Installation Steps:</h2>
+### Kundli Reading
 
-<p>1. Download (clone) the files</p>
+Users can enter:
 
-<p>2. Open index.html in your browser to see it.</p>
+* Name
+* Birth Date
+* Birth Time
+* Birth Place
 
-<h2>🛡️ License:</h2>
+and receive a basic zodiac-based personality reading.
 
-This project is licensed under the GNU
+### Match Making
+
+Basic compatibility analysis based on zodiac signs.
+
+### Vastu Guidance
+
+Simple vastu recommendations for:
+
+* Bedroom
+* Kitchen
+* Study Room
+* Main Entrance
+* Office Space
+
+### Gemstone Advice
+
+Basic gemstone recommendations based on zodiac signs.
+
+## 📞 Consultation
+
+Users can:
+
+* Select preferred consultation date
+* Select preferred consultation time
+* Submit birth details
+* Send booking requests through WhatsApp
+
+## 📧 Contact
+
+For consultations and inquiries:
+
+Phone: +91 8484013977
+
+Website:
+https://astro-shree.com/
+
+## 🔮 Future Enhancements
+
+* Real Astrology API Integration
+* Detailed Kundli Generation
+* Nakshatra Analysis
+* Lagna Calculation
+* Moon Sign Prediction
+* Online Payment Gateway
+* User Dashboard
+* Consultation History
+
+## 👩‍💻 Developed By
+
+Manasvi Bharadwaj
+
+---
+
+⭐ If you like this project, please consider giving it a star.
