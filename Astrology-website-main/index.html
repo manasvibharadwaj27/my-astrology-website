@@ -262,6 +262,7 @@
                 <a href="#services" class="hover:accent-gold transition duration-200">Services</a>
                 <a href="#testimonials" class="hover:accent-gold transition duration-200">Testimonials</a>
                 <a href="#faq" class="hover:accent-gold transition duration-200">FAQ</a>
+
                 <a href="upi.html" class="hover:accent-gold transition duration-200">Contact</a>
             </div>
             <div class="md:hidden">
@@ -272,6 +273,7 @@
                 </button>
             </div>
         </nav>
+        
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 shadow-xl">
              <a href="#home" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Home</a>
              <a href="#showcase" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Showcase</a>
@@ -716,21 +718,29 @@ function generateGemstone() {
 
 <!-- CALL TO ACTION -->
 
-<div class="flex flex-col sm:flex-row justify-center gap-8 mb-8 mt-10">
+<div class="flex flex-col sm:flex-row justify-center gap-6 mb-8 mt-10">
 
-<button type="button" onclick="goToServices()"
-class="accent-red-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
-✨ Explore Services
-</button>
-    
-<a href="services.html"
-class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
-✨ Let's Connect
-</a>
+  <!-- Explore Services -->
+  <button type="button" onclick="goToServices()"
+    class="accent-red-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
+    ✨ Explore Services
+  </button>
+
+  <!-- Let's Connect -->
+  <a href="services.html"
+    class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition text-center">
+    ✨ Let's Connect
+  </a>
+
+  <!-- Divine Blessings -->
+  <a href="blessings.html"
+    class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition text-center">
+    🙏 Divine Blessings
+  </a>
+  </div>
 
 </div>
-
-
+</section>
 
         <section id="why-us" class="py-20 px-4 section-bg-base fade-in-section">
              <div class="container mx-auto text-center">
@@ -1810,6 +1820,14 @@ function goToServices() {
     services.scrollIntoView({
       behavior: "smooth"
     });
+  }
+}
+</script>
+<script>
+function goToServices() {
+  const services = document.getElementById("services");
+  if (services) {
+    services.scrollIntoView({ behavior: "smooth" });
   }
 }
 </script>
