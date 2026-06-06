@@ -262,7 +262,7 @@
                 <a href="#services" class="hover:accent-gold transition duration-200">Services</a>
                 <a href="#testimonials" class="hover:accent-gold transition duration-200">Testimonials</a>
                 <a href="#faq" class="hover:accent-gold transition duration-200">FAQ</a>
-                <a href="#contact" class="hover:accent-gold transition duration-200">Contact</a>
+                <a href="upi.html" class="hover:accent-gold transition duration-200">Contact</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="hamburger focus:outline-none">
@@ -280,7 +280,7 @@
              <a href="#services" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Services</a>
              <a href="#testimonials" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Testimonials</a>
              <a href="#faq" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">FAQ</a>
-             <a href="#contact" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Contact</a>
+             <a href="upi.html" class="block px-6 py-3 text-center hover:bg-gray-100 transition duration-200">Contact</a>
         </div>
     </header>
 
@@ -312,52 +312,425 @@
 ✨ The stars reveal • Karma explains • Wisdom transforms ✨
 </p>
 
-<!-- SERVICES QUICK VIEW -->
+<div id="services"></div>
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+<!-- SERVICES SMART BOXES -->
 
-<div class="glassmorphism p-4 rounded-lg hover-effect">
-🔮 <p class="font-semibold mt-1">Kundli Reading</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-10 px-6">
+
+  <!-- KUNDLI READING -->
+  <div class="bg-white rounded-xl shadow-lg p-5 text-center">
+    <div class="text-3xl mb-2">🔮</div>
+    <h3 class="text-lg font-bold text-gray-800 mb-3">Kundli Reading</h3>
+
+    <button onclick="toggleServiceBox('kundliBox')"
+      class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-sm">
+      Explore
+    </button>
+
+    <div id="kundliBox" class="hidden mt-4 text-left">
+      <input id="kundliName" type="text" placeholder="Your Name"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="kundliDob" type="date"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="kundliTime" type="time"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="kundliPlace" type="text" placeholder="Birth Place"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <button onclick="generateKundli()"
+        class="bg-purple-700 hover:bg-purple-800 text-white w-full py-2 rounded mt-2">
+        Generate Basic Kundli
+      </button>
+
+      <div id="kundliResult"
+        class="hidden mt-4 bg-purple-50 text-gray-800 p-4 rounded text-sm leading-6">
+      </div>
+    </div>
+  </div>
+
+  <!-- MATCH MAKING -->
+  <div class="bg-white rounded-xl shadow-lg p-5 text-center">
+    <div class="text-3xl mb-2">💞</div>
+    <h3 class="text-lg font-bold text-gray-800 mb-3">Match Making</h3>
+
+    <button onclick="toggleServiceBox('matchBox')"
+      class="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-full text-sm">
+      Explore
+    </button>
+
+    <div id="matchBox" class="hidden mt-4 text-left">
+      <input id="boyName" type="text" placeholder="Boy Name"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="boyDob" type="date"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="girlName" type="text" placeholder="Girl Name"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <input id="girlDob" type="date"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <button onclick="generateMatch()"
+        class="bg-pink-600 hover:bg-pink-700 text-white w-full py-2 rounded mt-2">
+        Check Basic Match
+      </button>
+
+      <div id="matchResult"
+        class="hidden mt-4 bg-pink-50 text-gray-800 p-4 rounded text-sm leading-6">
+      </div>
+    </div>
+  </div>
+
+  <!-- VASTU GUIDANCE -->
+  <div class="bg-white rounded-xl shadow-lg p-5 text-center">
+    <div class="text-3xl mb-2">🏡</div>
+    <h3 class="text-lg font-bold text-gray-800 mb-3">Vastu Guidance</h3>
+
+    <button onclick="toggleServiceBox('vastuBox')"
+      class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-full text-sm">
+      Explore
+    </button>
+
+    <div id="vastuBox" class="hidden mt-4 text-left">
+      <select id="roomType"
+        class="border w-full p-2 rounded mb-2 text-black">
+        <option value="">Select Area</option>
+        <option value="bedroom">Bedroom</option>
+        <option value="kitchen">Kitchen</option>
+        <option value="study">Study Room</option>
+        <option value="mainDoor">Main Door</option>
+        <option value="office">Office / Work Desk</option>
+      </select>
+
+      <button onclick="generateVastu()"
+        class="bg-indigo-600 hover:bg-indigo-700 text-white w-full py-2 rounded mt-2">
+        Get Basic Vastu Tip
+      </button>
+
+      <div id="vastuResult"
+        class="hidden mt-4 bg-indigo-50 text-gray-800 p-4 rounded text-sm leading-6">
+      </div>
+    </div>
+  </div>
+
+  <!-- GEMSTONE ADVICE -->
+  <div class="bg-white rounded-xl shadow-lg p-5 text-center">
+    <div class="text-3xl mb-2">💎</div>
+    <h3 class="text-lg font-bold text-gray-800 mb-3">Gemstone Advice</h3>
+
+    <button onclick="toggleServiceBox('gemBox')"
+      class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-full text-sm">
+      Explore
+    </button>
+
+    <div id="gemBox" class="hidden mt-4 text-left">
+      <input id="gemDob" type="date"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <button onclick="generateGemstone()"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white w-full py-2 rounded mt-2">
+        Get Basic Gemstone
+      </button>
+
+      <div id="gemResult"
+        class="hidden mt-4 bg-yellow-50 text-gray-800 p-4 rounded text-sm leading-6">
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<div class="glassmorphism p-4 rounded-lg hover-effect">
-💑 <p class="font-semibold mt-1">Match Making</p>
-</div>
+<script>
+function toggleServiceBox(id) {
+  document.getElementById(id).classList.toggle("hidden");
+}
 
-<div class="glassmorphism p-4 rounded-lg hover-effect">
-🏡 <p class="font-semibold mt-1">Vastu Guidance</p>
-</div>
+function getZodiacSign(day, month) {
+  if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "aries";
+  if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "taurus";
+  if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "gemini";
+  if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "cancer";
+  if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "leo";
+  if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "virgo";
+  if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "libra";
+  if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "scorpio";
+  if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "sagittarius";
+  if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "capricorn";
+  if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "aquarius";
+  return "pisces";
+}
 
-<div class="glassmorphism p-4 rounded-lg hover-effect">
-💎 <p class="font-semibold mt-1">Gemstone Advice</p>
-</div>
+const zodiacData = {
+  aries: {
+    icon: "♈", name: "Aries", color: "Red", number: "9", gem: "Red Coral",
+    personality: "You are energetic, brave and action-oriented.",
+    career: "Leadership, business, sales and active work can suit you.",
+    relationship: "You are direct in love and value honesty.",
+    advice: "Control anger and avoid quick decisions."
+  },
+  taurus: {
+    icon: "♉", name: "Taurus", color: "Green", number: "6", gem: "Diamond or Opal",
+    personality: "You are stable, patient and practical.",
+    career: "Finance, beauty, food, design and property work can suit you.",
+    relationship: "You are loyal and prefer long-term stability.",
+    advice: "Avoid stubbornness and accept change slowly."
+  },
+  gemini: {
+    icon: "♊", name: "Gemini", color: "Yellow", number: "5", gem: "Emerald",
+    personality: "You are curious, smart and expressive.",
+    career: "Writing, marketing, teaching, media and technology can suit you.",
+    relationship: "You need mental connection and good conversation.",
+    advice: "Focus on one thing at a time."
+  },
+  cancer: {
+    icon: "♋", name: "Cancer", color: "White", number: "2", gem: "Pearl",
+    personality: "You are emotional, caring and intuitive.",
+    career: "Healing, counseling, hospitality and education can suit you.",
+    relationship: "You are protective and deeply attached.",
+    advice: "Do not overthink emotional situations."
+  },
+  leo: {
+    icon: "♌", name: "Leo", color: "Gold", number: "1", gem: "Ruby",
+    personality: "You are confident, expressive and naturally leadership-oriented.",
+    career: "Management, creative work and public-facing roles can suit you.",
+    relationship: "You value loyalty, respect and appreciation.",
+    advice: "Use confidence positively and avoid ego clashes."
+  },
+  virgo: {
+    icon: "♍", name: "Virgo", color: "Green", number: "5", gem: "Emerald",
+    personality: "You are analytical, disciplined and detail-focused.",
+    career: "Research, accounts, health, data and organized work can suit you.",
+    relationship: "You show love through care and practical support.",
+    advice: "Do not be too critical of yourself or others."
+  },
+  libra: {
+    icon: "♎", name: "Libra", color: "Pink", number: "6", gem: "Diamond",
+    personality: "You are balanced, charming and relationship-focused.",
+    career: "Law, fashion, design, consulting and public dealing can suit you.",
+    relationship: "You seek harmony, respect and emotional balance.",
+    advice: "Avoid overthinking while making decisions."
+  },
+  scorpio: {
+    icon: "♏", name: "Scorpio", color: "Maroon", number: "9", gem: "Red Coral",
+    personality: "You are intense, intuitive and emotionally deep.",
+    career: "Research, psychology, investigation and strategy work can suit you.",
+    relationship: "You are loyal but need trust and honesty.",
+    advice: "Let go of past hurt and avoid secrecy."
+  },
+  sagittarius: {
+    icon: "♐", name: "Sagittarius", color: "Orange", number: "3", gem: "Yellow Sapphire",
+    personality: "You are optimistic, adventurous and knowledge-seeking.",
+    career: "Teaching, travel, coaching, law and spirituality can suit you.",
+    relationship: "You need freedom, honesty and positivity.",
+    advice: "Balance freedom with responsibility."
+  },
+  capricorn: {
+    icon: "♑", name: "Capricorn", color: "Dark Blue", number: "8", gem: "Blue Sapphire",
+    personality: "You are disciplined, hardworking and goal-oriented.",
+    career: "Administration, business, engineering and management can suit you.",
+    relationship: "You are serious, loyal and committed.",
+    advice: "Take rest and do not carry all pressure alone."
+  },
+  aquarius: {
+    icon: "♒", name: "Aquarius", color: "Sky Blue", number: "7", gem: "Blue Sapphire",
+    personality: "You are independent, innovative and future-focused.",
+    career: "Technology, social work, research and creative ideas can suit you.",
+    relationship: "You value friendship, freedom and mental connection.",
+    advice: "Express emotions clearly."
+  },
+  pisces: {
+    icon: "♓", name: "Pisces", color: "Sea Green", number: "3", gem: "Yellow Sapphire",
+    personality: "You are spiritual, imaginative and emotionally sensitive.",
+    career: "Art, healing, music, spirituality and counseling can suit you.",
+    relationship: "You love deeply and need emotional understanding.",
+    advice: "Stay practical while following your dreams."
+  }
+};
 
-</div>
+function getSignFromDate(dateValue) {
+  const date = new Date(dateValue);
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  return getZodiacSign(day, month);
+}
+
+function generateKundli() {
+  const name = document.getElementById("kundliName").value;
+  const dob = document.getElementById("kundliDob").value;
+  const time = document.getElementById("kundliTime").value;
+  const place = document.getElementById("kundliPlace").value;
+  const result = document.getElementById("kundliResult");
+
+  if (!name || !dob || !time || !place) {
+    alert("Please fill Name, Birth Date, Birth Time and Birth Place.");
+    return;
+  }
+
+  const sign = getSignFromDate(dob);
+  const r = zodiacData[sign];
+
+  result.classList.remove("hidden");
+  result.innerHTML = `
+    <h4 class="font-bold text-lg mb-2">🔮 Basic Kundli Reading for ${name}</h4>
+    <p><b>Zodiac Sign:</b> ${r.icon} ${r.name}</p>
+    <p><b>Birth Date:</b> ${dob}</p>
+    <p><b>Birth Time:</b> ${time}</p>
+    <p><b>Birth Place:</b> ${place}</p>
+    <hr class="my-3">
+    <p><b>Personality:</b> ${r.personality}</p>
+    <p><b>Career Strength:</b> ${r.career}</p>
+    <p><b>Relationship Nature:</b> ${r.relationship}</p>
+    <p><b>Lucky Color:</b> ${r.color}</p>
+    <p><b>Lucky Number:</b> ${r.number}</p>
+    <p><b>Basic Advice:</b> ${r.advice}</p>
+    <p class="mt-3 text-xs italic">
+      Note: This is a basic zodiac-based reading. For detailed Kundli, Lagna, Nakshatra and planetary analysis, book a personal consultation.
+    </p>
+    <a href="#contact" class="inline-block mt-4 bg-purple-700 text-white px-4 py-2 rounded-full text-sm">
+      Book Detailed Consultation
+    </a>
+  `;
+}
+
+function generateMatch() {
+  const boy = document.getElementById("boyName").value;
+  const boyDob = document.getElementById("boyDob").value;
+  const girl = document.getElementById("girlName").value;
+  const girlDob = document.getElementById("girlDob").value;
+  const result = document.getElementById("matchResult");
+
+  if (!boy || !boyDob || !girl || !girlDob) {
+    alert("Please fill both names and birth dates.");
+    return;
+  }
+
+  const boySign = zodiacData[getSignFromDate(boyDob)];
+  const girlSign = zodiacData[getSignFromDate(girlDob)];
+
+  const score = 65 + ((boy.length + girl.length + boyDob.length + girlDob.length) % 26);
+
+  result.classList.remove("hidden");
+  result.innerHTML = `
+    <h4 class="font-bold text-lg mb-2">💞 Basic Match Result</h4>
+    <p><b>${boy}:</b> ${boySign.icon} ${boySign.name}</p>
+    <p><b>${girl}:</b> ${girlSign.icon} ${girlSign.name}</p>
+    <p><b>Compatibility Score:</b> ${score}%</p>
+    <hr class="my-3">
+    <p><b>Bond:</b> This match can grow with patience, communication and emotional understanding.</p>
+    <p><b>Advice:</b> Respect each other's nature and avoid ego-based arguments.</p>
+    <p class="mt-3 text-xs italic">
+      Note: This is a basic zodiac-based match. For detailed Gun Milan, birth time and complete kundli analysis are required.
+    </p>
+  `;
+}
+
+function generateVastu() {
+  const room = document.getElementById("roomType").value;
+  const result = document.getElementById("vastuResult");
+
+  if (!room) {
+    alert("Please select an area.");
+    return;
+  }
+
+  const vastuTips = {
+    bedroom: {
+      title: "Bedroom",
+      direction: "South-West",
+      tip: "Keep bedroom peaceful and clutter-free. Avoid mirrors facing the bed.",
+      energy: "Calm and stable energy"
+    },
+    kitchen: {
+      title: "Kitchen",
+      direction: "South-East",
+      tip: "Keep kitchen clean and bright. Avoid keeping water and fire elements too close.",
+      energy: "Active and nourishing energy"
+    },
+    study: {
+      title: "Study Room",
+      direction: "East or North",
+      tip: "Face east or north while studying. Keep books organized and avoid distractions.",
+      energy: "Focused and learning energy"
+    },
+    mainDoor: {
+      title: "Main Door",
+      direction: "North, East or North-East",
+      tip: "Keep the entrance clean, well-lit and welcoming. Avoid broken items near the door.",
+      energy: "Positive entry energy"
+    },
+    office: {
+      title: "Office / Work Desk",
+      direction: "North or East",
+      tip: "Keep your desk clean. Sit with a solid wall behind you for support.",
+      energy: "Growth and productivity energy"
+    }
+  };
+
+  const v = vastuTips[room];
+
+  result.classList.remove("hidden");
+  result.innerHTML = `
+    <h4 class="font-bold text-lg mb-2">🏡 Basic Vastu Guidance</h4>
+    <p><b>Area:</b> ${v.title}</p>
+    <p><b>Lucky Direction:</b> ${v.direction}</p>
+    <p><b>Energy:</b> ${v.energy}</p>
+    <p><b>Tip:</b> ${v.tip}</p>
+    <p class="mt-3 text-xs italic">
+      Note: This is a basic vastu suggestion. For detailed home or office vastu, full layout analysis is required.
+    </p>
+  `;
+}
+
+function generateGemstone() {
+  const dob = document.getElementById("gemDob").value;
+  const result = document.getElementById("gemResult");
+
+  if (!dob) {
+    alert("Please select birth date.");
+    return;
+  }
+
+  const sign = getSignFromDate(dob);
+  const r = zodiacData[sign];
+
+  result.classList.remove("hidden");
+  result.innerHTML = `
+    <h4 class="font-bold text-lg mb-2">💎 Basic Gemstone Advice</h4>
+    <p><b>Zodiac Sign:</b> ${r.icon} ${r.name}</p>
+    <p><b>Suggested Gemstone:</b> ${r.gem}</p>
+    <p><b>Lucky Color:</b> ${r.color}</p>
+    <p><b>Lucky Number:</b> ${r.number}</p>
+    <p><b>Benefit:</b> This gemstone is traditionally connected with confidence, balance and positive energy for your zodiac nature.</p>
+    <p class="mt-3 text-xs italic">
+      Note: Wear any gemstone only after personal consultation, because gemstone suitability depends on full kundli.
+    </p>
+  `;
+}
+</script>
+
 
 <!-- CALL TO ACTION -->
 
-<div class="flex flex-col sm:flex-row gap-4 mb-6">
+<div class="flex flex-col sm:flex-row justify-center gap-8 mb-8 mt-10">
 
-<a href="#services"
+<button type="button" onclick="goToServices()"
 class="accent-red-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
 ✨ Explore Services
-</a>
+</button>
 
-<a href="upi.html"
-class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
-📿 Book Consultation
-</a>
-</a>
-
-</div>
-
-<p class="text-sm text-yellow-600 italic">
-🌟 Trusted guidance for thousands seeking clarity and peace
-</p>
+  <a href="services.html"
+    class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow-lg transform hover:scale-105 transition">
+    ✨ Let's Connect
+  </a>
 
 </div>
 
-</section>
+
 
         <section id="why-us" class="py-20 px-4 section-bg-base fade-in-section">
              <div class="container mx-auto text-center">
@@ -383,32 +756,252 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
             </div>
         </section>
 
-        <section id="horoscope" class="py-20 px-4 section-bg-alt fade-in-section">
-             <div class="container mx-auto max-w-3xl text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Today's <span class="accent-red">Rashifal</span></h2>
-                 <p class="text-muted mb-8"> Select your Rashi (Moon Sign) for your daily Vedic forecast. </p>
-                <div class="glassmorphism p-8 rounded-xl shadow-lg">
-                     <label for="horoscopeSignSelect" class="sr-only">Select Rashi</label>
-                     <select id="horoscopeSignSelect" name="horoscopeSign" class="text-lg rounded-lg focus:ring-red-500 focus:border-red-500 block w-full max-w-xs mx-auto p-3 mb-6">
-                        <option value="" disabled selected>Choose Your Rashi</option>
-                        <option value="Aries">Mesh (Aries) ♈</option>
-                        <option value="Taurus">Vrishabh (Taurus) ♉</option>
-                        <option value="Gemini">Mithun (Gemini) ♊</option>
-                        <option value="Cancer">Kark (Cancer) ♋</option>
-                        <option value="Leo">Singh (Leo) ♌</option>
-                        <option value="Virgo">Kanya (Virgo) ♍</option>
-                        <option value="Libra">Tula (Libra) ♎</option>
-                        <option value="Scorpio">Vrishchik (Scorpio) ♏</option>
-                        <option value="Sagittarius">Dhanu (Sagittarius) ♐</option>
-                        <option value="Capricorn">Makar (Capricorn) ♑</option>
-                        <option value="Aquarius">Kumbh (Aquarius) ♒</option>
-                        <option value="Pisces">Meen (Pisces) ♓</option>
-                    </select>
-                    <div id="horoscopeDisplay" class="text-left leading-relaxed"> Select a Rashi above to see today's horoscope... </div>
-                </div>
-                 <p class="text-sm text-muted mt-4 italic"> Daily Rashifal offers general guidance based on Moon sign. For personalized insights, a full Kundli analysis is recommended. </p>
-            </div>
-        </section>
+        <!-- DAILY RASHIFAL SECTION -->
+
+<!-- DAILY RASHIFAL SECTION -->
+
+<section class="py-20 px-6">
+
+  <div class="max-w-7xl mx-auto text-center">
+
+    <!-- HEADING -->
+
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">
+      ✨ Daily Rashifal ✨
+    </h2>
+
+    <p class="text-white mb-12 text-lg font-medium">
+      Select your zodiac sign and discover today's horoscope 🌙
+    </p>
+
+    <!-- ZODIAC CARDS -->
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+      <!-- Aries -->
+      <button onclick="showRashi('aries')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♈</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Aries
+        </h3>
+
+      </button>
+
+      <!-- Taurus -->
+      <button onclick="showRashi('taurus')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♉</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Taurus
+        </h3>
+
+      </button>
+
+      <!-- Gemini -->
+      <button onclick="showRashi('gemini')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♊</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Gemini
+        </h3>
+
+      </button>
+
+      <!-- Cancer -->
+      <button onclick="showRashi('cancer')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♋</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Cancer
+        </h3>
+
+      </button>
+
+      <!-- Leo -->
+      <button onclick="showRashi('leo')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♌</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Leo
+        </h3>
+
+      </button>
+
+      <!-- Virgo -->
+      <button onclick="showRashi('virgo')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♍</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Virgo
+        </h3>
+
+      </button>
+
+      <!-- Libra -->
+      <button onclick="showRashi('libra')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♎</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Libra
+        </h3>
+
+      </button>
+
+      <!-- Scorpio -->
+      <button onclick="showRashi('scorpio')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♏</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Scorpio
+        </h3>
+
+      </button>
+
+      <!-- Sagittarius -->
+      <button onclick="showRashi('sagittarius')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♐</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Sagittarius
+        </h3>
+
+      </button>
+
+      <!-- Capricorn -->
+      <button onclick="showRashi('capricorn')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♑</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Capricorn
+        </h3>
+
+      </button>
+
+      <!-- Aquarius -->
+      <button onclick="showRashi('aquarius')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♒</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Aquarius
+        </h3>
+
+      </button>
+
+      <!-- Pisces -->
+      <button onclick="showRashi('pisces')"
+        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
+
+        <div class="text-5xl mb-3">♓</div>
+        <h3 class="font-bold text-lg text-white drop-shadow-lg">
+          Pisces
+        </h3>
+
+      </button>
+
+    </div>
+
+    <!-- RESULT BOX -->
+
+    <div id="rashifal-result"
+      class="hidden mt-12 bg-white rounded-3xl p-8 max-w-3xl mx-auto shadow-2xl">
+
+      <h3 id="rashi-title"
+        class="text-3xl font-bold mb-4 text-black"></h3>
+
+      <p id="rashi-text"
+        class="text-lg text-black leading-8 font-medium"></p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+function showRashi(sign) {
+
+  const resultBox = document.getElementById("rashifal-result");
+  const title = document.getElementById("rashi-title");
+  const text = document.getElementById("rashi-text");
+
+  resultBox.classList.remove("hidden");
+
+  if(sign === "aries") {
+    title.innerHTML = "♈ Aries";
+    text.innerHTML = "Today is lucky for career growth and success.";
+  }
+
+  if(sign === "taurus") {
+    title.innerHTML = "♉ Taurus";
+    text.innerHTML = "Financial stability and peace will stay strong today.";
+  }
+
+  if(sign === "gemini") {
+    title.innerHTML = "♊ Gemini";
+    text.innerHTML = "Communication skills will help you succeed today.";
+  }
+
+  if(sign === "cancer") {
+    title.innerHTML = "♋ Cancer";
+    text.innerHTML = "Emotional healing and peace surround you today.";
+  }
+
+  if(sign === "leo") {
+    title.innerHTML = "♌ Leo";
+    text.innerHTML = "Confidence and leadership will shine brightly today.";
+  }
+
+  if(sign === "virgo") {
+    title.innerHTML = "♍ Virgo";
+    text.innerHTML = "A productive and balanced day awaits you.";
+  }
+
+  if(sign === "libra") {
+    title.innerHTML = "♎ Libra";
+    text.innerHTML = "Love and harmony will improve your mood today.";
+  }
+
+  if(sign === "scorpio") {
+    title.innerHTML = "♏ Scorpio";
+    text.innerHTML = "Your intuition will guide you towards success.";
+  }
+
+  if(sign === "sagittarius") {
+    title.innerHTML = "♐ Sagittarius";
+    text.innerHTML = "Adventure and positivity will brighten your day.";
+  }
+
+  if(sign === "capricorn") {
+    title.innerHTML = "♑ Capricorn";
+    text.innerHTML = "Hard work today will bring future rewards.";
+  }
+
+  if(sign === "aquarius") {
+    title.innerHTML = "♒ Aquarius";
+    text.innerHTML = "Creative ideas and innovation will help you grow.";
+  }
+
+  if(sign === "pisces") {
+    title.innerHTML = "♓ Pisces";
+    text.innerHTML = "Spiritual energy and inner peace are strong today.";
+  }
+}
+
+</script>
+       
 
         <section id="services" class="py-20 px-4 section-bg-base fade-in-section">
              <div class="container mx-auto text-center">
@@ -422,7 +1015,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                     <h3 class="card-title accent-gold">Detailed Kundli Reading</h3>
                                     <p class="card-description">In-depth analysis of your birth chart revealing planetary positions, strengths, weaknesses, and life path insights based on Vedic principles.</p>
                                 </div>
-                                <a href="#contact" class="card-button">Learn More</a>
+                                <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                         <div class="slider-slide">
@@ -432,7 +1025,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                     <h3 class="card-title accent-gold">Kundli Matching (Gun Milan)</h3>
                                     <p class="card-description">Comprehensive compatibility analysis for marriage, assessing Ashtakoota score and other crucial factors for a harmonious union.</p>
                                 </div>
-                                <a href="#contact" class="card-button">Learn More</a>
+                                <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                         <div class="slider-slide">
@@ -442,7 +1035,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                     <h3 class="card-title accent-gold">Career & Business Astrology</h3>
                                     <p class="card-description">Identify favorable career paths, auspicious timing for business ventures, and astrological remedies for professional growth.</p>
                                 </div>
-                                <a href="#contact" class="card-button">Learn More</a>
+                                <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                         <div class="slider-slide">
@@ -452,7 +1045,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                      <h3 class="card-title accent-gold">Vastu Shastra Consultation</h3>
                                      <p class="card-description">Harmonize your living or workspace according to Vastu principles to enhance positivity, prosperity, and well-being.</p>
                                  </div>
-                                 <a href="#contact" class="card-button">Learn More</a>
+                                 <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                          <div class="slider-slide">
@@ -462,7 +1055,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                      <h3 class="card-title accent-gold">Muhurta (Auspicious Timing)</h3>
                                      <p class="card-description">Find the most favorable date and time (Muhurta) for important events like weddings, housewarming, or starting new projects.</p>
                                  </div>
-                                 <a href="#contact" class="card-button">Learn More</a>
+                                 <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                          <div class="slider-slide">
@@ -472,7 +1065,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                      <h3 class="card-title accent-gold">Gemstone Recommendations</h3>
                                      <p class="card-description">Personalized guidance on suitable gemstones based on your birth chart to strengthen positive planetary influences.</p>
                                  </div>
-                                 <a href="#contact" class="card-button">Learn More</a>
+                                 <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                          <div class="slider-slide">
@@ -482,7 +1075,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                                      <h3 class="card-title accent-gold">Puja & Astrological Remedies</h3>
                                      <p class="card-description">Guidance on specific Pujas, Mantras, Yantras, and other Vedic remedies (Upayas) to mitigate challenges and enhance fortune.</p>
                                  </div>
-                                 <a href="#contact" class="card-button">Learn More</a>
+                                 <a href="upi.html" class="card-button">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -538,34 +1131,224 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                     <h3 class="text-2xl font-semibold text-muted mb-4">Manasvi Bharadwaj</h3>
                     <p class="mb-4 leading-relaxed text-light"> Namaste! I am Manasvi, a dedicated practitioner of Vedic Astrology with 5 years of experience in guiding individuals through the cosmic map of their lives. My passion lies in decoding the ancient wisdom of the Vedas to offer clarity, direction, and effective remedies. </p>
                     <p class="mb-4 leading-relaxed text-light"> My expertise includes Numerology,Kundali Matching,Past Analysis,Guidance,Future predictions & Chart Reading. I believe in an ethical, compassionate approach, empowering you to understand your karma and make informed choices. </p>
-                     <p class="leading-relaxed text-light"> Let's explore the divine plan together. </p>
+                     <p class="leading-relaxed text-light"> 's explore the divine plan together. </p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 px-4 section-bg-alt fade-in-section">
-            <div class="container mx-auto max-w-3xl text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Connect for a <span class="accent-gold">Consultation</span></h2>
-                <p class="text-muted mb-10"> Ready to gain deeper insights? Use the booking link or send an inquiry below. </p>
-                <div class="mb-10 text-center">
-                     <a href="YOUR_BOOKING_LINK_HERE" target="_blank" rel="noopener noreferrer" class="inline-block accent-red-bg text-white font-bold py-3 px-10 rounded-lg text-lg transition duration-300 shadow-lg transform hover:scale-105 hover:bg-red-700"> 📅 Book Consultation Online </a>
-                     <p class="text-sm text-muted mt-2">Connect with me on +918484013977</p>
-                </div>
-                <div class="glassmorphism p-8 rounded-xl shadow-lg text-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-center accent-gold">Send Your Query (Prashn)</h3>
-                    <form action="https://formspree.io/f/xdawywgk" method="POST">
-                         <div class="mb-5"> <label for="name" class="block mb-2 text-sm font-medium text-muted">Your Name (Naam)</label> <input type="text" id="name" name="name" class="text-sm rounded-lg block w-full p-3" placeholder="Enter your name" required> </div>
-                        <div class="mb-5"> <label for="email" class="block mb-2 text-sm font-medium text-muted">Your Email</label> <input type="email" id="email" name="email" class="text-sm rounded-lg block w-full p-3" placeholder="you@example.com" required> </div>
-                         <div class="mb-5"> <label for="subject" class="block mb-2 text-sm font-medium text-muted">Subject (Vishay)</label> <input type="text" id="subject" name="subject" class="text-sm rounded-lg block w-full p-3" placeholder="Reason for contacting" required> </div>
-                        <div class="mb-5"> <label for="message" class="block mb-2 text-sm font-medium text-muted">Message (Sandesh)</label> <textarea id="message" name="message" rows="4" class="text-sm rounded-lg block w-full p-3" placeholder="Your message..." required></textarea> </div>
-                        <div class="text-center"> <button type="submit" class="accent-green-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-md hover:bg-green-700 transform hover:scale-105"> Send Inquiry <i class="fas fa-paper-plane ml-2"></i> </button> </div>
-                    </form>
-                    <div id="formResult" class="mt-6 text-center font-semibold min-h-[24px]"></div>
-                </div>
-            </div>
-        </section>
+        ```html
+<section id="contact" class="py-20 px-4 section-bg-alt fade-in-section">
 
-    </main>
+<div class="container mx-auto max-w-3xl text-center">
+
+<h2 class="text-3xl md:text-4xl font-bold mb-6">
+Connect for a <span class="accent-gold">Consultation</span>
+</h2>
+
+<p class="text-muted mb-10">
+Ready to gain deeper insights? Book your consultation below.
+</p>
+
+<!-- BOOK BUTTON -->
+
+<div class="mb-10 text-center">
+
+<button onclick="openBookingForm()"
+class="inline-block accent-red-bg text-white font-bold py-3 px-10 rounded-lg text-lg transition duration-300 shadow-lg transform hover:scale-105 hover:bg-red-700">
+
+📅 Book Consultation Online
+
+</button>
+
+<p class="text-sm text-muted mt-2">
+Connect with me on +918484013977
+</p>
+
+</div>
+
+<!-- BOOKING FORM -->
+
+<div id="bookingForm"
+class="hidden glassmorphism p-8 rounded-xl shadow-lg text-left mb-10">
+
+<h3 class="text-2xl font-semibold mb-6 text-center accent-gold">
+Book Your 1-to-1 Consultation
+</h3>
+
+<p class="text-center font-bold text-lg mb-6">
+Consultation Fee: ₹499
+</p>
+
+<div class="grid md:grid-cols-2 gap-4">
+
+<input type="text" id="userName"
+placeholder="Your Name"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="tel" id="userPhone"
+placeholder="Phone Number"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="date" id="consultDate"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="time" id="consultTime"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="date" id="birthDate"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="time" id="birthTime"
+class="text-sm rounded-lg block w-full p-3">
+
+<input type="text" id="birthPlace"
+placeholder="Birth Place"
+class="text-sm rounded-lg block w-full p-3 md:col-span-2">
+
+<textarea id="userQuestion"
+rows="4"
+placeholder="Your Question"
+class="text-sm rounded-lg block w-full p-3 md:col-span-2"></textarea>
+
+</div>
+
+<div class="text-center mt-6">
+
+<button onclick="sendBookingWhatsApp()"
+class="accent-green-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-md hover:bg-green-700 transform hover:scale-105">
+
+Send Booking
+
+</button>
+
+</div>
+
+</div>
+
+<!-- QUERY FORM -->
+
+<div class="glassmorphism p-8 rounded-xl shadow-lg text-left">
+
+<h3 class="text-2xl font-semibold mb-6 text-center accent-gold">
+Send Your Query (Prashn)
+</h3>
+
+<form action="https://formspree.io/f/xdawywgk" method="POST">
+
+<div class="mb-5">
+<label for="name" class="block mb-2 text-sm font-medium text-muted">
+Your Name (Naam)
+</label>
+
+<input type="text"
+id="name"
+name="name"
+class="text-sm rounded-lg block w-full p-3"
+placeholder="Enter your name"
+required>
+</div>
+
+<div class="mb-5">
+<label for="email" class="block mb-2 text-sm font-medium text-muted">
+Your Email
+</label>
+
+<input type="email"
+id="email"
+name="email"
+class="text-sm rounded-lg block w-full p-3"
+placeholder="you@example.com"
+required>
+</div>
+
+<div class="mb-5">
+<label for="subject" class="block mb-2 text-sm font-medium text-muted">
+Subject (Vishay)
+</label>
+
+<input type="text"
+id="subject"
+name="subject"
+class="text-sm rounded-lg block w-full p-3"
+placeholder="Reason for contacting"
+required>
+</div>
+
+<div class="mb-5">
+<label for="message" class="block mb-2 text-sm font-medium text-muted">
+Message (Sandesh)
+</label>
+
+<textarea id="message"
+name="message"
+rows="4"
+class="text-sm rounded-lg block w-full p-3"
+placeholder="Your message..."
+required></textarea>
+</div>
+
+<div class="text-center">
+
+<button type="submit"
+class="accent-green-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-md hover:bg-green-700 transform hover:scale-105">
+
+Send Inquiry
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function openBookingForm() {
+document.getElementById("bookingForm").classList.toggle("hidden");
+}
+
+function sendBookingWhatsApp() {
+
+const name = document.getElementById("userName").value;
+const phone = document.getElementById("userPhone").value;
+const consultDate = document.getElementById("consultDate").value;
+const consultTime = document.getElementById("consultTime").value;
+const birthDate = document.getElementById("birthDate").value;
+const birthTime = document.getElementById("birthTime").value;
+const birthPlace = document.getElementById("birthPlace").value;
+const question = document.getElementById("userQuestion").value;
+
+const message =
+`New Consultation Booking
+
+Name: ${name}
+Phone: ${phone}
+
+Consultation Date: ${consultDate}
+Consultation Time: ${consultTime}
+
+Birth Date: ${birthDate}
+Birth Time: ${birthTime}
+Birth Place: ${birthPlace}
+
+Question: ${question}
+
+Fee: ₹199`;
+
+window.open(
+`https://wa.me/918484013977?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+
+</script>
+```
 
     <a href="https://wa.me/8484013977" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -923,7 +1706,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const headerOffset = document.querySelector('header')?.offsetHeight || 70; // Get header height dynamically
+                    const headerOffset = document.qSelector('header')?.offsetHeight || 70; // Get header height dynamically
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -939,7 +1722,7 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
         faqItems.forEach(item => { /* ... listener logic ... */
              item.addEventListener('click', () => {
                 const answer = item.nextElementSibling;
-                const allAnswers = document.querySelectorAll('.faq-answer');
+                const allAnswers = document.qSelectorAll('.faq-answer');
                 const wasOpen = answer.classList.contains('open'); // Check if it was already open
 
                 // Close all answers first
@@ -1019,6 +1802,18 @@ class="accent-green-bg text-white font-bold py-3 px-10 rounded-lg text-lg shadow
         }
 
     </script>
+<script>
+function goToServices() {
+  const services = document.getElementById("services");
+
+  if (services) {
+    services.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
+</script>
 
 </body>
+
 </html>
