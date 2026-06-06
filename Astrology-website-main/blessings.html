@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine Blessings & Games | Astro Shree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(20, 8, 40, 0.82), rgba(20, 8, 40, 0.92)),
+        url("images/astrology-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .sparkle {
+      position: fixed;
+      animation: fall 8s linear infinite;
+      top: -50px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    .wheel {
+      transition: transform 3s ease-out;
+    }
+
+    .diya-glow {
+      box-shadow: 0 0 30px #facc15;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="bg-black/50 backdrop-blur-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+  <a href="index.html" class="text-2xl font-bold text-yellow-300">🔮 Astro Shree</a>
+  <div class="space-x-4 text-sm md:text-base">
+    <a href="index.html" class="hover:text-yellow-300">Home</a>
+    <a href="services.html" class="hover:text-yellow-300">Services</a>
+    <a href="upi.html" class="hover:text-yellow-300">Payment</a>
+  </div>
+</nav>
+
+<section class="py-20 px-6 text-center">
+  <div class="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 shadow-2xl">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-300 mb-6">
+      🙏 Divine Blessings & Guru Kripa 🙏
+    </h1>
+    <p class="text-lg md:text-xl text-white/90 leading-8">
+      A spiritual space filled with Guru Kripa, divine energy, blessings and peaceful guidance.
+    </p>
+  </div>
+</section>
+
+<section class="px-6 pb-16">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center glass rounded-3xl p-6 md:p-10">
+    <img src="images/guru-kripa.jpg" class="w-full rounded-2xl shadow-2xl object-cover">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-5">
+        🙏 Guru Kripa
+      </h2>
+      <p class="text-white/90 leading-8">
+        Everything we offer through Astro Shree is possible only through the blessings of Guruji.
+        Their wisdom and spiritual guidance inspire every consultation and remedy.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-16">
+  <div class="max-w-6xl mx-auto glass rounded-3xl p-8 text-center">
+    <h2 class="text-3xl md:text-5xl font-bold text-yellow-300 mb-8">
+      🎮 Divine Games & Spiritual Tools
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div class="text-5xl mb-3">🃏</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Pick Your Divine Card</h3>
+        <button onclick="pickCard()" class="bg-purple-600 hover:bg-purple-700 px-5 py-2 rounded-full font-bold">
+          Pick Card
+        </button>
+        <p id="cardResult" class="mt-4 text-white/90 font-medium"></p>
+      </div>
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div id="wheel" class="wheel text-6xl mb-3">🎡</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Spin Your Destiny</h3>
+        <button onclick="spinWheel()" class="bg-pink-600 hover:bg-pink-700 px-5 py-2 rounded-full font-bold">
+          Spin
+        </button>
+        <p id="wheelResult" class="mt-4 text-white/90 font-medium"></p>
+      </div>
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div id="diyaIcon" class="text-6xl mb-3">🪔</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Light a Virtual Diya</h3>
+        <button onclick="lightDiya()" class="bg-yellow-500 hover:bg-yellow-600 text-black px-5 py-2 rounded-full font-bold">
+          Light Diya
+        </button>
+        <p id="diyaResult" class="mt-4 text-white/90 font-medium">Diyas lit: <span id="diyaCount">0</span></p>
+      </div>
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div class="text-5xl mb-3">🌸</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Offer Flowers</h3>
+        <button onclick="offerFlower()" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-full font-bold">
+          Offer Flower
+        </button>
+        <p id="flowerResult" class="mt-4 text-white/90 font-medium"></p>
+      </div>
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div class="text-5xl mb-3">🔢</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Lucky Number Generator</h3>
+        <input id="luckyName" type="text" placeholder="Enter your name"
+          class="w-full p-3 rounded-lg text-black mb-3">
+        <button onclick="generateLucky()" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full font-bold">
+          Generate
+        </button>
+        <p id="luckyResult" class="mt-4 text-white/90 font-medium"></p>
+      </div>
+
+      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
+        <div class="text-5xl mb-3">✨</div>
+        <h3 class="text-xl font-bold text-yellow-200 mb-3">Today's Divine Message</h3>
+        <button onclick="dailyMessage()" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full font-bold">
+          Reveal Message
+        </button>
+        <p id="messageResult" class="mt-4 text-white/90 font-medium"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-16">
+  <div class="max-w-6xl mx-auto glass rounded-3xl p-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-8">
+      📸 Divine Blessings Gallery
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+      <img src="images/guru-kripa.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/gurumaa.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/saints-lineage.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/radha-krishna.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/guruji-darshan.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/spiritual-blessings.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+      <img src="images/guruji-satsang.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
+    </div>
+  </div>
+</section>
+
+<section class="px-6 pb-20 text-center">
+  <div class="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 shadow-2xl">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-300 mb-6">
+      ✨ With Gratitude ✨
+    </h2>
+    <p class="text-white/90 leading-8 text-lg mb-8">
+      Astro Shree is a humble offering dedicated to Guru Kripa, Divine Guidance and the service of those seeking clarity, faith and peace.
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-5 justify-center">
+      <a href="index.html" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-3 rounded-lg">
+        Back to Home
+      </a>
+      <a href="services.html" class="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg">
+        Explore Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+function createSparkles() {
+  const items = ["✨", "🌸", "🕉️", "💫"];
+  setInterval(() => {
+    const span = document.createElement("span");
+    span.className = "sparkle";
+    span.innerHTML = items[Math.floor(Math.random() * items.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.fontSize = Math.random() * 15 + 18 + "px";
+    document.body.appendChild(span);
+
+    setTimeout(() => {
+      span.remove();
+    }, 8000);
+  }, 900);
+}
+
+createSparkles();
+
+function pickCard() {
+  const cards = [
+    "🪔 Guru Kripa is protecting you today.",
+    "🌸 A peaceful blessing is coming into your life.",
+    "💰 Financial improvement may come with patience.",
+    "💖 Love and harmony are surrounding you.",
+    "🕉️ Trust divine timing. Everything is aligning.",
+    "✨ Your prayers are being heard."
+  ];
+
+  document.getElementById("cardResult").innerHTML =
+    cards[Math.floor(Math.random() * cards.length)];
+}
+
+function spinWheel() {
+  const wheel = document.getElementById("wheel");
+  const results = [
+    "Career Growth",
+    "Love Harmony",
+    "Financial Stability",
+    "Spiritual Growth",
+    "Family Peace",
+    "New Opportunity"
+  ];
+
+  const degree = 720 + Math.floor(Math.random() * 720);
+  wheel.style.transform = `rotate(${degree}deg)`;
+
+  setTimeout(() => {
+    document.getElementById("wheelResult").innerHTML =
+      "✨ Destiny Message: " + results[Math.floor(Math.random() * results.length)];
+  }, 3000);
+}
+
+let diyaCount = 0;
+
+function lightDiya() {
+  diyaCount++;
+  document.getElementById("diyaCount").innerHTML = diyaCount;
+  document.getElementById("diyaIcon").classList.add("diya-glow");
+  document.getElementById("diyaResult").innerHTML =
+    `🪔 Diya lit successfully. Blessings added: ${diyaCount}`;
+}
+
+function offerFlower() {
+  const flowers = ["🌹 Rose offered with love.", "🌼 Marigold offered with devotion.", "🌺 Lotus offered with faith.", "🌸 Divine flower offered successfully."];
+  document.getElementById("flowerResult").innerHTML =
+    flowers[Math.floor(Math.random() * flowers.length)];
+}
+
+function generateLucky() {
+  const name = document.getElementById("luckyName").value;
+
+  if (!name) {
+    alert("Please enter your name.");
+    return;
+  }
+
+  const colors = ["Gold", "Red", "Yellow", "White", "Green", "Purple", "Sky Blue"];
+  const days = ["Monday", "Tuesday", "Thursday", "Friday", "Sunday"];
+  const number = (name.length * 7) % 9 + 1;
+
+  document.getElementById("luckyResult").innerHTML =
+    `✨ Lucky Number: ${number}<br>🎨 Lucky Color: ${colors[number % colors.length]}<br>📅 Lucky Day: ${days[number % days.length]}`;
+}
+
+function dailyMessage() {
+  const messages = [
+    "🕉️ Trust the process. Divine timing is real.",
+    "🌸 Let go of fear and welcome peace.",
+    "✨ A new opportunity is coming soon.",
+    "🙏 Guru Kripa will guide your path.",
+    "💖 Keep your heart pure and positive.",
+    "🪔 Light will always remove darkness."
+  ];
+
+  document.getElementById("messageResult").innerHTML =
+    messages[Math.floor(Math.random() * messages.length)];
+}
+</script>
+
+</body>
+</html>
