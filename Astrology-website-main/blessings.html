@@ -1,293 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divine Blessings & Games | Astro Shree</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divine Blessings | Astro-Shree</title>
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    body {
-      background:
-        linear-gradient(rgba(20, 8, 40, 0.82), rgba(20, 8, 40, 0.92)),
-        url("images/astrology-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: white;
-      overflow-x: hidden;
+    body { overflow-x: hidden; }
+
+    .blessing-img {
+      width: 100%;
+      height: 270px;
+      object-fit: contain;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      transition: all 0.35s ease;
     }
 
-    .glass {
-      background: rgba(255,255,255,0.12);
+    .blessing-img:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 35px rgba(250,204,21,0.75);
+    }
+
+    .game-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(250,204,21,0.18));
+      border: 1px solid rgba(250,204,21,0.35);
       backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      transition: all 0.3s ease;
     }
 
-    .sparkle {
-      position: fixed;
-      animation: fall 8s linear infinite;
-      top: -50px;
-      z-index: 1;
-      pointer-events: none;
+    .game-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 0 35px rgba(250,204,21,0.45);
     }
 
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    .pick-card {
+      height: 135px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #facc15, #a855f7);
+      font-size: 45px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+      transition: all 0.3s ease;
     }
 
-    .wheel {
-      transition: transform 3s ease-out;
+    .pick-card:hover {
+      transform: translateY(-8px) scale(1.05);
     }
 
-    .diya-glow {
-      box-shadow: 0 0 30px #facc15;
+    .pick-card:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .result-box {
+      background: linear-gradient(135deg, #fff7cc, #ffffff, #f3e8ff);
+      color: #3b0764;
+      border-radius: 22px;
+      padding: 18px;
+      font-weight: 800;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      margin-top: 18px;
     }
   </style>
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-purple-950 via-black to-indigo-950 min-h-screen text-white">
 
-<nav class="bg-black/50 backdrop-blur-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-  <a href="index.html" class="text-2xl font-bold text-yellow-300">🔮 Astro Shree</a>
-  <div class="space-x-4 text-sm md:text-base">
-    <a href="index.html" class="hover:text-yellow-300">Home</a>
-    <a href="services.html" class="hover:text-yellow-300">Services</a>
-    <a href="upi.html" class="hover:text-yellow-300">Payment</a>
-  </div>
-</nav>
+  <section class="py-12 px-5">
+    <div class="max-w-7xl mx-auto text-center">
 
-<section class="py-20 px-6 text-center">
-  <div class="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 shadow-2xl">
-    <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-300 mb-6">
-      🙏 Divine Blessings & Guru Kripa 🙏
-    </h1>
-    <p class="text-lg md:text-xl text-white/90 leading-8">
-      A spiritual space filled with Guru Kripa, divine energy, blessings and peaceful guidance.
-    </p>
-  </div>
-</section>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-300 mb-4 drop-shadow-lg">
+        🙏 Divine Blessings 🙏
+      </h1>
 
-<section class="px-6 pb-16">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center glass rounded-3xl p-6 md:p-10">
-    <img src="images/guru-kripa.jpg" class="w-full rounded-2xl shadow-2xl object-cover">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-5">
-        🙏 Guru Kripa
-      </h2>
-      <p class="text-white/90 leading-8">
-        Everything we offer through Astro Shree is possible only through the blessings of Guruji.
-        Their wisdom and spiritual guidance inspire every consultation and remedy.
+      <p class="text-white/90 text-lg mb-4">
+        Open your heart, receive blessings, and play divine spiritual games.
       </p>
-    </div>
-  </div>
-</section>
 
-<section class="px-6 pb-16">
-  <div class="max-w-6xl mx-auto glass rounded-3xl p-8 text-center">
-    <h2 class="text-3xl md:text-5xl font-bold text-yellow-300 mb-8">
-      🎮 Divine Games & Spiritual Tools
-    </h2>
+      <p class="inline-block bg-yellow-300 text-purple-900 font-bold px-6 py-3 rounded-full mb-10 shadow-lg">
+        ✨ Every game is free, but each game can be played only once per day.
+      </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- BLESSING IMAGES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div class="text-5xl mb-3">🃏</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Pick Your Divine Card</h3>
-        <button onclick="pickCard()" class="bg-purple-600 hover:bg-purple-700 px-5 py-2 rounded-full font-bold">
-          Pick Card
-        </button>
-        <p id="cardResult" class="mt-4 text-white/90 font-medium"></p>
+        <a href="blessing1.jpg.jpeg" target="_blank">
+          <img src="blessing1.jpg.jpeg" class="blessing-img" alt="Blessing 1">
+        </a>
+
+        <a href="blessing2.jpg.jpeg" target="_blank">
+          <img src="blessing2.jpg.jpeg" class="blessing-img" alt="Blessing 2">
+        </a>
+
+        <a href="blessing3.jpg.jpeg" target="_blank">
+          <img src="blessing3.jpg.jpeg" class="blessing-img" alt="Blessing 3">
+        </a>
+
+        <a href="blessing4.jpg.jpeg" target="_blank">
+          <img src="blessing4.jpg.jpeg" class="blessing-img" alt="Blessing 4">
+        </a>
+
+        <a href="blessing5.jpg.jpeg" target="_blank">
+          <img src="blessing5.jpg.jpeg" class="blessing-img" alt="Blessing 5">
+        </a>
+
+        <a href="blessing6.jpg.jpeg" target="_blank">
+          <img src="blessing6.jpg.jpeg" class="blessing-img" alt="Blessing 6">
+        </a>
+
+        <a href="blessing7.jpg.jpeg" target="_blank">
+          <img src="blessing7.jpg.jpeg" class="blessing-img" alt="Blessing 7">
+        </a>
+
       </div>
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div id="wheel" class="wheel text-6xl mb-3">🎡</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Spin Your Destiny</h3>
-        <button onclick="spinWheel()" class="bg-pink-600 hover:bg-pink-700 px-5 py-2 rounded-full font-bold">
-          Spin
-        </button>
-        <p id="wheelResult" class="mt-4 text-white/90 font-medium"></p>
-      </div>
+      <!-- MAIN GAME AREA -->
+      <section class="bg-white/10 backdrop-blur-xl border border-yellow-400/40 rounded-3xl p-6 md:p-10 shadow-2xl mb-10">
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div id="diyaIcon" class="text-6xl mb-3">🪔</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Light a Virtual Diya</h3>
-        <button onclick="lightDiya()" class="bg-yellow-500 hover:bg-yellow-600 text-black px-5 py-2 rounded-full font-bold">
-          Light Diya
-        </button>
-        <p id="diyaResult" class="mt-4 text-white/90 font-medium">Diyas lit: <span id="diyaCount">0</span></p>
-      </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-300 mb-4">
+          🔮 Divine Game Zone 🔮
+        </h2>
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div class="text-5xl mb-3">🌸</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Offer Flowers</h3>
-        <button onclick="offerFlower()" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-full font-bold">
-          Offer Flower
-        </button>
-        <p id="flowerResult" class="mt-4 text-white/90 font-medium"></p>
-      </div>
+        <p class="text-white/90 mb-8">
+          Choose your divine game and receive today’s spiritual guidance.
+        </p>
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div class="text-5xl mb-3">🔢</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Lucky Number Generator</h3>
-        <input id="luckyName" type="text" placeholder="Enter your name"
-          class="w-full p-3 rounded-lg text-black mb-3">
-        <button onclick="generateLucky()" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full font-bold">
-          Generate
-        </button>
-        <p id="luckyResult" class="mt-4 text-white/90 font-medium"></p>
-      </div>
+        <div id="dailyLockMessage" class="hidden result-box mb-8"></div>
 
-      <div class="bg-white/15 rounded-2xl p-6 shadow-xl">
-        <div class="text-5xl mb-3">✨</div>
-        <h3 class="text-xl font-bold text-yellow-200 mb-3">Today's Divine Message</h3>
-        <button onclick="dailyMessage()" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full font-bold">
-          Reveal Message
-        </button>
-        <p id="messageResult" class="mt-4 text-white/90 font-medium"></p>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    </div>
-  </div>
-</section>
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">🃏 Pick A Divine Card</h3>
+            <p class="text-white/85 mb-5">Choose one mystery card for your blessing.</p>
+            <button onclick="openCardGame()" class="bg-yellow-300 text-purple-900 font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Play Card Game
+            </button>
 
-<section class="px-6 pb-16">
-  <div class="max-w-6xl mx-auto glass rounded-3xl p-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-yellow-300 mb-8">
-      📸 Divine Blessings Gallery
-    </h2>
+            <div id="cardGameArea" class="hidden mt-6">
+              <div class="grid grid-cols-3 gap-4">
+                <button onclick="pickDivineCard(1)" class="pick-card">🕉️</button>
+                <button onclick="pickDivineCard(2)" class="pick-card">🔱</button>
+                <button onclick="pickDivineCard(3)" class="pick-card">🌙</button>
+                <button onclick="pickDivineCard(4)" class="pick-card">✨</button>
+                <button onclick="pickDivineCard(5)" class="pick-card">💫</button>
+                <button onclick="pickDivineCard(6)" class="pick-card">🌸</button>
+              </div>
+              <div id="cardResult"></div>
+            </div>
+          </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-      <img src="images/guru-kripa.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/gurumaa.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/saints-lineage.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/radha-krishna.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/guruji-darshan.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/spiritual-blessings.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-      <img src="images/guruji-satsang.jpg" class="w-full h-56 object-cover rounded-2xl shadow-lg">
-    </div>
-  </div>
-</section>
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">🎲 Lucky Number</h3>
+            <p class="text-white/85 mb-5">Find your lucky number for today.</p>
+            <button onclick="luckyNumberGame()" class="bg-green-400 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Reveal Number
+            </button>
+            <div id="numberResult"></div>
+          </div>
 
-<section class="px-6 pb-20 text-center">
-  <div class="max-w-5xl mx-auto glass rounded-3xl p-8 md:p-12 shadow-2xl">
-    <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-300 mb-6">
-      ✨ With Gratitude ✨
-    </h2>
-    <p class="text-white/90 leading-8 text-lg mb-8">
-      Astro Shree is a humble offering dedicated to Guru Kripa, Divine Guidance and the service of those seeking clarity, faith and peace.
-    </p>
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">🌈 Lucky Color</h3>
+            <p class="text-white/85 mb-5">Know your lucky color energy.</p>
+            <button onclick="luckyColorGame()" class="bg-pink-400 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Reveal Color
+            </button>
+            <div id="colorResult"></div>
+          </div>
 
-    <div class="flex flex-col md:flex-row gap-5 justify-center">
-      <a href="index.html" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-3 rounded-lg">
-        Back to Home
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">❓ Yes / No Oracle</h3>
+            <p class="text-white/85 mb-5">Think a question in your mind.</p>
+            <button onclick="yesNoOracle()" class="bg-blue-400 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Ask Oracle
+            </button>
+            <div id="oracleResult"></div>
+          </div>
+
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">👼 Angel Number</h3>
+            <p class="text-white/85 mb-5">Get your angel number message.</p>
+            <button onclick="angelNumberGame()" class="bg-purple-400 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Show Angel Number
+            </button>
+            <div id="angelResult"></div>
+          </div>
+
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">💫 Daily Energy Meter</h3>
+            <p class="text-white/85 mb-5">Love, money, career and health energy.</p>
+            <button onclick="energyMeterGame()" class="bg-orange-400 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Check Energy
+            </button>
+            <div id="energyResult"></div>
+          </div>
+
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">💎 Pick A Crystal</h3>
+            <p class="text-white/85 mb-5">Reveal your crystal energy for today.</p>
+            <button onclick="crystalGame()" class="bg-cyan-300 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Pick Crystal
+            </button>
+            <div id="crystalResult"></div>
+          </div>
+
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">🪔 Karma Message</h3>
+            <p class="text-white/85 mb-5">Know your karmic message for today.</p>
+            <button onclick="karmaGame()" class="bg-amber-300 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Get Karma Message
+            </button>
+            <div id="karmaResult"></div>
+          </div>
+
+          <div class="game-card">
+            <h3 class="text-2xl font-extrabold text-yellow-300 mb-3">🌟 Fortune Cookie</h3>
+            <p class="text-white/85 mb-5">Open your spiritual fortune cookie.</p>
+            <button onclick="fortuneCookieGame()" class="bg-rose-300 text-black font-bold px-6 py-3 rounded-xl hover:scale-105 transition">
+              Open Fortune
+            </button>
+            <div id="fortuneResult"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <a href="index.html"
+         class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold py-4 px-10 rounded-2xl shadow-lg hover:scale-105 transition">
+        ⬅ Back to Home
       </a>
-      <a href="services.html" class="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg">
-        Explore Services
-      </a>
+
     </div>
-  </div>
-</section>
+  </section>
 
 <script>
-function createSparkles() {
-  const items = ["✨", "🌸", "🕉️", "💫"];
-  setInterval(() => {
-    const span = document.createElement("span");
-    span.className = "sparkle";
-    span.innerHTML = items[Math.floor(Math.random() * items.length)];
-    span.style.left = Math.random() * 100 + "vw";
-    span.style.fontSize = Math.random() * 15 + 18 + "px";
-    document.body.appendChild(span);
-
-    setTimeout(() => {
-      span.remove();
-    }, 8000);
-  }, 900);
-}
-
-createSparkles();
-
-function pickCard() {
-  const cards = [
-    "🪔 Guru Kripa is protecting you today.",
-    "🌸 A peaceful blessing is coming into your life.",
-    "💰 Financial improvement may come with patience.",
-    "💖 Love and harmony are surrounding you.",
-    "🕉️ Trust divine timing. Everything is aligning.",
-    "✨ Your prayers are being heard."
-  ];
-
-  document.getElementById("cardResult").innerHTML =
-    cards[Math.floor(Math.random() * cards.length)];
-}
-
-function spinWheel() {
-  const wheel = document.getElementById("wheel");
-  const results = [
-    "Career Growth",
-    "Love Harmony",
-    "Financial Stability",
-    "Spiritual Growth",
-    "Family Peace",
-    "New Opportunity"
-  ];
-
-  const degree = 720 + Math.floor(Math.random() * 720);
-  wheel.style.transform = `rotate(${degree}deg)`;
-
-  setTimeout(() => {
-    document.getElementById("wheelResult").innerHTML =
-      "✨ Destiny Message: " + results[Math.floor(Math.random() * results.length)];
-  }, 3000);
-}
-
-let diyaCount = 0;
-
-function lightDiya() {
-  diyaCount++;
-  document.getElementById("diyaCount").innerHTML = diyaCount;
-  document.getElementById("diyaIcon").classList.add("diya-glow");
-  document.getElementById("diyaResult").innerHTML =
-    `🪔 Diya lit successfully. Blessings added: ${diyaCount}`;
-}
-
-function offerFlower() {
-  const flowers = ["🌹 Rose offered with love.", "🌼 Marigold offered with devotion.", "🌺 Lotus offered with faith.", "🌸 Divine flower offered successfully."];
-  document.getElementById("flowerResult").innerHTML =
-    flowers[Math.floor(Math.random() * flowers.length)];
-}
-
-function generateLucky() {
-  const name = document.getElementById("luckyName").value;
-
-  if (!name) {
-    alert("Please enter your name.");
-    return;
+  function getTodayDateKey() {
+    const today = new Date();
+    return today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   }
 
-  const colors = ["Gold", "Red", "Yellow", "White", "Green", "Purple", "Sky Blue"];
-  const days = ["Monday", "Tuesday", "Thursday", "Friday", "Sunday"];
-  const number = (name.length * 7) % 9 + 1;
+  function canPlayGame(gameName) {
+    const todayKey = getTodayDateKey();
+    const playedDate = localStorage.getItem(gameName + "PlayedDate");
 
-  document.getElementById("luckyResult").innerHTML =
-    `✨ Lucky Number: ${number}<br>🎨 Lucky Color: ${colors[number % colors.length]}<br>📅 Lucky Day: ${days[number % days.length]}`;
-}
+    if (playedDate === todayKey) {
+      const lockBox = document.getElementById("dailyLockMessage");
+      lockBox.classList.remove("hidden");
+      lockBox.innerHTML = "🌙 You already played this game today. Please come back tomorrow for this game.";
+      return false;
+    }
 
-function dailyMessage() {
-  const messages = [
-    "🕉️ Trust the process. Divine timing is real.",
-    "🌸 Let go of fear and welcome peace.",
-    "✨ A new opportunity is coming soon.",
-    "🙏 Guru Kripa will guide your path.",
-    "💖 Keep your heart pure and positive.",
-    "🪔 Light will always remove darkness."
-  ];
+    localStorage.setItem(gameName + "PlayedDate", todayKey);
+    return true;
+  }
 
-  document.getElementById("messageResult").innerHTML =
-    messages[Math.floor(Math.random() * messages.length)];
-}
+  function showResult(id, message) {
+    document.getElementById(id).innerHTML = `<div class="result-box">${message}</div>`;
+  }
+
+  function openCardGame() {
+    if (!canPlayGame("cardGame")) return;
+    document.getElementById("cardGameArea").classList.remove("hidden");
+  }
+
+  function pickDivineCard(cardNumber) {
+    const messages = [
+      "🕉️ Divine protection is around you today. Stay calm and trust your path.",
+      "🔱 Lord Shiva energy supports your new beginning. Avoid anger and move wisely.",
+      "🌙 Your intuition is strong today. Listen to your inner voice.",
+      "✨ Good news may come soon. Keep your thoughts positive.",
+      "💫 A blocked path will slowly open. Do not lose hope.",
+      "🌸 Love, peace and blessings are entering your life."
+    ];
+
+    showResult("cardResult", messages[cardNumber - 1]);
+
+    document.querySelectorAll(".pick-card").forEach(btn => {
+      btn.disabled = true;
+    });
+  }
+
+  function luckyNumberGame() {
+    if (!canPlayGame("luckyNumber")) return;
+    const number = Math.floor(Math.random() * 99) + 1;
+    const msgs = [
+      "This number brings success energy.",
+      "This number supports love and peace.",
+      "This number carries wealth vibration.",
+      "This number brings spiritual protection."
+    ];
+    showResult("numberResult", `🎲 Your lucky number is <span class="text-3xl">${number}</span><br>${msgs[Math.floor(Math.random() * msgs.length)]}`);
+  }
+
+  function luckyColorGame() {
+    if (!canPlayGame("luckyColor")) return;
+    const colors = [
+      "Gold – success and divine blessings",
+      "Red – courage and confidence",
+      "Green – money and healing",
+      "White – peace and purity",
+      "Purple – spiritual power",
+      "Yellow – knowledge and luck",
+      "Pink – love and harmony",
+      "Blue – calm mind and protection"
+    ];
+    showResult("colorResult", `🌈 Your lucky color today is:<br><span class="text-2xl">${colors[Math.floor(Math.random() * colors.length)]}</span>`);
+  }
+
+  function yesNoOracle() {
+    if (!canPlayGame("yesNoOracle")) return;
+    const answers = [
+      "✅ Yes, the energy is positive.",
+      "❌ Not right now. Wait for better timing.",
+      "🌙 Maybe. Trust your intuition.",
+      "✨ Yes, but move slowly and wisely.",
+      "🔱 No, first clear your doubts.",
+      "🙏 Divine timing is working. Be patient."
+    ];
+    showResult("oracleResult", answers[Math.floor(Math.random() * answers.length)]);
+  }
+
+  function angelNumberGame() {
+    if (!canPlayGame("angelNumber")) return;
+    const angelNumbers = [
+      "111 – New beginnings are coming.",
+      "222 – Balance and patience are needed.",
+      "333 – Divine support is with you.",
+      "444 – You are protected by higher energy.",
+      "555 – Big change is coming soon.",
+      "777 – Spiritual luck is active.",
+      "888 – Money energy is improving.",
+      "999 – Old cycle is ending. New path begins."
+    ];
+    showResult("angelResult", `👼 Your angel number is:<br><span class="text-2xl">${angelNumbers[Math.floor(Math.random() * angelNumbers.length)]}</span>`);
+  }
+
+  function energyMeterGame() {
+    if (!canPlayGame("energyMeter")) return;
+    const love = Math.floor(Math.random() * 41) + 60;
+    const money = Math.floor(Math.random() * 41) + 60;
+    const career = Math.floor(Math.random() * 41) + 60;
+    const health = Math.floor(Math.random() * 41) + 60;
+
+    showResult("energyResult", `
+      ❤️ Love Energy: ${love}%<br>
+      💰 Money Energy: ${money}%<br>
+      🚀 Career Energy: ${career}%<br>
+      🌿 Health Energy: ${health}%<br><br>
+      ✨ Stay positive and move with faith.
+    `);
+  }
+
+  function crystalGame() {
+    if (!canPlayGame("crystalGame")) return;
+    const crystals = [
+      "Amethyst – peace and spiritual clarity",
+      "Rose Quartz – love and emotional healing",
+      "Citrine – money and confidence",
+      "Clear Quartz – focus and protection",
+      "Tiger Eye – courage and stability",
+      "Moonstone – intuition and calmness"
+    ];
+    showResult("crystalResult", `💎 Your crystal today is:<br><span class="text-2xl">${crystals[Math.floor(Math.random() * crystals.length)]}</span>`);
+  }
+
+  function karmaGame() {
+    if (!canPlayGame("karmaGame")) return;
+    const karma = [
+      "🪔 Be kind today. Your kindness will return beautifully.",
+      "🙏 Patience is your lesson today.",
+      "🌿 Release old anger and welcome peace.",
+      "✨ A good deed will open a lucky door.",
+      "🔱 Stay truthful. Your path will become clear.",
+      "🌸 Forgiveness will heal your energy."
+    ];
+    showResult("karmaResult", karma[Math.floor(Math.random() * karma.length)]);
+  }
+
+  function fortuneCookieGame() {
+    if (!canPlayGame("fortuneCookie")) return;
+    const fortunes = [
+      "🌟 A surprise blessing may arrive soon.",
+      "💫 Your hard work will not go waste.",
+      "🌙 Trust the timing of your life.",
+      "🕉️ Divine energy is guiding your decisions.",
+      "🌹 A peaceful conversation will solve a problem.",
+      "⭐ Your confidence will attract opportunity."
+    ];
+    showResult("fortuneResult", fortunes[Math.floor(Math.random() * fortunes.length)]);
+  }
 </script>
 
 </body>
