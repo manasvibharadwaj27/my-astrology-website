@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Going through hard times, need guidance, want to be free of stress free,  you are at the right place.">
     <meta name="keywords" content="Astro, Astrology, Plamist, Future"/>
-    <link rel="icon" href ="./images/favicon.ico" alt ="icon" type ="image/x-icon" /> 
+    <link rel="icon" href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/svgs/solid/star-of-life.svg" alt ="icon" type ="image/x-icon" /> 
     <title>Astro-Shree - Divine Astrological Guidance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,7 +100,7 @@
         #home { position: relative; overflow: hidden; background-color: #e0f2fe; }
         .parallax-bg {
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('/Background.png');
+            background-image: url('https://i.pinimg.com/736x/b5/07/6c/b5076c5f011c07332a37c3f0c8804901.jpg');
             background-size: cover; background-position: center; background-repeat: no-repeat;
             z-index: 0; will-change: transform; transition: transform 0.1s linear; opacity: 0.4;
         }
@@ -244,6 +244,16 @@
          }
          .whatsapp-float:hover { transform: scale(1.1); }
 
+        .field-label {
+            display: block;
+            font-weight: 700;
+            color: var(--text-heading);
+            font-size: 0.875rem;
+            margin: 0.25rem 0 0.35rem;
+        }
+        .field-label span { color: var(--accent-red); }
+
+
     </style>
 </head>
 <body class="section-bg-base">
@@ -314,11 +324,10 @@
 ✨ The stars reveal • Karma explains • Wisdom transforms ✨
 </p>
 
-<div id="services"></div>
+<div id="quick-services"></div>
 
 <!-- SERVICES SMART BOXES -->
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-10 px-6">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10 px-4">
 
   <!-- KUNDLI READING -->
   <div class="bg-white rounded-xl shadow-lg p-5 text-center">
@@ -331,17 +340,21 @@
     </button>
 
     <div id="kundliBox" class="hidden mt-4 text-left">
+      <label for="kundliName" class="field-label">Your Name <span>*</span></label>
       <input id="kundliName" type="text" placeholder="Your Name"
         class="border w-full p-2 rounded mb-2 text-black">
 
+      <label for="kundliDob" class="field-label">Date of Birth <span>*</span></label>
       <input id="kundliDob" type="date"
         class="border w-full p-2 rounded mb-2 text-black">
 
+      <label for="kundliTime" class="field-label">Birth Time <span>*</span></label>
       <input id="kundliTime" type="time"
         class="border w-full p-2 rounded mb-2 text-black">
 
-      <input id="kundliPlace" type="text" placeholder="Birth Place"
-        class="border w-full p-2 rounded mb-2 text-black">
+      <label for="kundliPlace" class="field-label">Birth Place / City <span>*</span></label>
+      <input id="kundliPlace" type="text" placeholder="Enter valid city name e.g. Delhi, Mumbai"
+        list="cityList" class="border w-full p-2 rounded mb-2 text-black">
 
       <button onclick="generateKundli()"
         class="bg-purple-700 hover:bg-purple-800 text-white w-full py-2 rounded mt-2">
@@ -365,16 +378,28 @@
     </button>
 
     <div id="matchBox" class="hidden mt-4 text-left">
+      <label for="boyName" class="field-label">Boy Name <span>*</span></label>
       <input id="boyName" type="text" placeholder="Boy Name"
         class="border w-full p-2 rounded mb-2 text-black">
 
+      <label for="boyDob" class="field-label">Boy Date of Birth <span>*</span></label>
       <input id="boyDob" type="date"
         class="border w-full p-2 rounded mb-2 text-black">
 
+      <label for="boyTime" class="field-label">Boy Birth Time <span>*</span></label>
+      <input id="boyTime" type="time"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <label for="girlName" class="field-label">Girl Name <span>*</span></label>
       <input id="girlName" type="text" placeholder="Girl Name"
         class="border w-full p-2 rounded mb-2 text-black">
 
+      <label for="girlDob" class="field-label">Girl Date of Birth <span>*</span></label>
       <input id="girlDob" type="date"
+        class="border w-full p-2 rounded mb-2 text-black">
+
+      <label for="girlTime" class="field-label">Girl Birth Time <span>*</span></label>
+      <input id="girlTime" type="time"
         class="border w-full p-2 rounded mb-2 text-black">
 
       <button onclick="generateMatch()"
@@ -446,6 +471,16 @@
   </div>
 
 </div>
+
+<datalist id="cityList">
+  <option value="Delhi"><option value="New Delhi"><option value="Mumbai"><option value="Pune">
+  <option value="Bengaluru"><option value="Bangalore"><option value="Hyderabad"><option value="Chennai">
+  <option value="Kolkata"><option value="Ahmedabad"><option value="Jaipur"><option value="Lucknow">
+  <option value="Noida"><option value="Gurugram"><option value="Gurgaon"><option value="Chandigarh">
+  <option value="Indore"><option value="Bhopal"><option value="Surat"><option value="Nagpur">
+  <option value="Patna"><option value="Varanasi"><option value="Prayagraj"><option value="Kanpur">
+  <option value="Dehradun"><option value="Haridwar"><option value="Agra"><option value="Udaipur">
+</datalist>
 
 <script>
 function toggleServiceBox(id) {
@@ -561,6 +596,21 @@ function getSignFromDate(dateValue) {
   return getZodiacSign(day, month);
 }
 
+function isValidCityName(city) {
+  const cleanedCity = city.trim();
+
+  // कम से कम 3 अक्षर होने चाहिए
+  if (cleanedCity.length < 3) {
+    return false;
+  }
+
+  // सिर्फ letters, space, dot और hyphen allow
+  const cityPattern = /^[A-Za-z\s.-]+$/;
+
+  return cityPattern.test(cleanedCity);
+}
+
+
 function generateKundli() {
   const name = document.getElementById("kundliName").value;
   const dob = document.getElementById("kundliDob").value;
@@ -570,6 +620,13 @@ function generateKundli() {
 
   if (!name || !dob || !time || !place) {
     alert("Please fill Name, Birth Date, Birth Time and Birth Place.");
+    return;
+  }
+
+  if (!isValidCityName(place)) {
+    alert("Invalid Birth Place. Please enter a valid city name like Delhi, Mumbai, Pune, Jaipur.");
+    result.classList.remove("hidden");
+    result.innerHTML = `<p class="text-red-600 font-bold">❌ Invalid Birth Place. Please enter a valid city name.</p>`;
     return;
   }
 
@@ -602,12 +659,14 @@ function generateKundli() {
 function generateMatch() {
   const boy = document.getElementById("boyName").value;
   const boyDob = document.getElementById("boyDob").value;
+  const boyTime = document.getElementById("boyTime").value;
   const girl = document.getElementById("girlName").value;
   const girlDob = document.getElementById("girlDob").value;
+  const girlTime = document.getElementById("girlTime").value;
   const result = document.getElementById("matchResult");
 
-  if (!boy || !boyDob || !girl || !girlDob) {
-    alert("Please fill both names and birth dates.");
+  if (!boy || !boyDob || !boyTime || !girl || !girlDob || !girlTime) {
+    alert("Please fill both names, birth dates and birth times.");
     return;
   }
 
@@ -619,8 +678,8 @@ function generateMatch() {
   result.classList.remove("hidden");
   result.innerHTML = `
     <h4 class="font-bold text-lg mb-2">💞 Basic Match Result</h4>
-    <p><b>${boy}:</b> ${boySign.icon} ${boySign.name}</p>
-    <p><b>${girl}:</b> ${girlSign.icon} ${girlSign.name}</p>
+    <p><b>${boy}:</b> ${boySign.icon} ${boySign.name} | <b>Birth Time:</b> ${boyTime}</p>
+    <p><b>${girl}:</b> ${girlSign.icon} ${girlSign.name} | <b>Birth Time:</b> ${girlTime}</p>
     <p><b>Compatibility Score:</b> ${score}%</p>
     <hr class="my-3">
     <p><b>Bond:</b> This match can grow with patience, communication and emotional understanding.</p>
@@ -766,17 +825,22 @@ function generateGemstone() {
             </div>
         </section>
 
-        <!-- DAILY RASHIFAL SECTION -->
-
 <!-- DAILY RASHIFAL SECTION -->
 
-<section class="py-20 px-6">
+<section id="horoscope" class="py-20 px-6 bg-gradient-to-br from-purple-950 via-black to-indigo-950 relative overflow-hidden">
 
-  <div class="max-w-7xl mx-auto text-center">
+  <!-- FALLING FLOWERS CONTAINER -->
+  <div id="flowerFall"></div>
+
+  <!-- BACKGROUND DECORATION -->
+  <div class="absolute top-10 left-10 text-yellow-300/30 text-6xl">✨</div>
+  <div class="absolute top-32 right-16 text-purple-300/30 text-7xl">🌙</div>
+  <div class="absolute bottom-20 left-20 text-yellow-300/20 text-7xl">🔮</div>
+
+  <div class="max-w-7xl mx-auto text-center relative z-10">
 
     <!-- HEADING -->
-
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-yellow-300 drop-shadow-lg">
       ✨ Daily Rashifal ✨
     </h2>
 
@@ -785,153 +849,117 @@ function generateGemstone() {
     </p>
 
     <!-- ZODIAC CARDS -->
-
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
 
-      <!-- Aries -->
-      <button onclick="showRashi('aries')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('aries')" class="rashi-card">
         <div class="text-5xl mb-3">♈</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Aries
-        </h3>
-
+        <h3>Aries</h3>
       </button>
 
-      <!-- Taurus -->
-      <button onclick="showRashi('taurus')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('taurus')" class="rashi-card">
         <div class="text-5xl mb-3">♉</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Taurus
-        </h3>
-
+        <h3>Taurus</h3>
       </button>
 
-      <!-- Gemini -->
-      <button onclick="showRashi('gemini')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('gemini')" class="rashi-card">
         <div class="text-5xl mb-3">♊</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Gemini
-        </h3>
-
+        <h3>Gemini</h3>
       </button>
 
-      <!-- Cancer -->
-      <button onclick="showRashi('cancer')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('cancer')" class="rashi-card">
         <div class="text-5xl mb-3">♋</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Cancer
-        </h3>
-
+        <h3>Cancer</h3>
       </button>
 
-      <!-- Leo -->
-      <button onclick="showRashi('leo')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('leo')" class="rashi-card">
         <div class="text-5xl mb-3">♌</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Leo
-        </h3>
-
+        <h3>Leo</h3>
       </button>
 
-      <!-- Virgo -->
-      <button onclick="showRashi('virgo')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('virgo')" class="rashi-card">
         <div class="text-5xl mb-3">♍</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Virgo
-        </h3>
-
+        <h3>Virgo</h3>
       </button>
 
-      <!-- Libra -->
-      <button onclick="showRashi('libra')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('libra')" class="rashi-card">
         <div class="text-5xl mb-3">♎</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Libra
-        </h3>
-
+        <h3>Libra</h3>
       </button>
 
-      <!-- Scorpio -->
-      <button onclick="showRashi('scorpio')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('scorpio')" class="rashi-card">
         <div class="text-5xl mb-3">♏</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Scorpio
-        </h3>
-
+        <h3>Scorpio</h3>
       </button>
 
-      <!-- Sagittarius -->
-      <button onclick="showRashi('sagittarius')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('sagittarius')" class="rashi-card">
         <div class="text-5xl mb-3">♐</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Sagittarius
-        </h3>
-
+        <h3>Sagittarius</h3>
       </button>
 
-      <!-- Capricorn -->
-      <button onclick="showRashi('capricorn')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('capricorn')" class="rashi-card">
         <div class="text-5xl mb-3">♑</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Capricorn
-        </h3>
-
+        <h3>Capricorn</h3>
       </button>
 
-      <!-- Aquarius -->
-      <button onclick="showRashi('aquarius')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('aquarius')" class="rashi-card">
         <div class="text-5xl mb-3">♒</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Aquarius
-        </h3>
-
+        <h3>Aquarius</h3>
       </button>
 
-      <!-- Pisces -->
-      <button onclick="showRashi('pisces')"
-        class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-3xl p-6 hover:scale-105 hover:bg-white/20 transition shadow-xl">
-
+      <button onclick="showRashi('pisces')" class="rashi-card">
         <div class="text-5xl mb-3">♓</div>
-        <h3 class="font-bold text-lg text-white drop-shadow-lg">
-          Pisces
-        </h3>
-
+        <h3>Pisces</h3>
       </button>
 
     </div>
 
     <!-- RESULT BOX -->
-
     <div id="rashifal-result"
-      class="hidden mt-12 bg-white rounded-3xl p-8 max-w-3xl mx-auto shadow-2xl">
+      class="hidden mt-12 bg-gradient-to-br from-yellow-100 via-white to-purple-100 rounded-3xl p-8 max-w-3xl mx-auto shadow-2xl border-4 border-yellow-400">
+
+      <div class="text-4xl mb-4 animate-bounce">
+        🌙✨🔮✨🌙
+      </div>
 
       <h3 id="rashi-title"
-        class="text-3xl font-bold mb-4 text-black"></h3>
+        class="text-3xl font-bold mb-4 text-purple-900"></h3>
 
       <p id="rashi-text"
-        class="text-lg text-black leading-8 font-medium"></p>
+        class="text-lg text-gray-800 leading-8 font-medium"></p>
+
+      <div class="mt-6 text-yellow-700 font-bold text-xl">
+        ⭐ Cosmic Guidance For Today ⭐
+      </div>
+
+    </div>
+
+    <!-- LUCKY RASHI GAME -->
+    <div class="mt-16 max-w-5xl mx-auto bg-white/10 backdrop-blur-lg border border-yellow-400/40 rounded-3xl p-8 shadow-2xl">
+
+      <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-4">
+        🎮 Lucky Rashi Game 🎮
+      </h2>
+
+      <p class="text-white/90 mb-8">
+        Reveal your lucky color, lucky number and divine message for today.
+      </p>
+
+      <button onclick="playLuckyGame()"
+        class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-xl hover:scale-105 transition shadow-xl">
+        ✨ Reveal My Destiny ✨
+      </button>
+
+      <div id="gameResult"
+        class="hidden mt-8 bg-gradient-to-r from-yellow-200 via-white to-pink-200 p-6 rounded-2xl border-4 border-yellow-400 max-w-2xl mx-auto shadow-xl">
+
+        <h3 class="text-2xl font-bold text-purple-900 mb-4">
+          🌟 Your Divine Message 🌟
+        </h3>
+
+        <p id="gameText"
+          class="text-lg text-gray-800 font-semibold leading-8"></p>
+
+      </div>
 
     </div>
 
@@ -939,79 +967,186 @@ function generateGemstone() {
 
 </section>
 
-<script>
+<style>
+.rashi-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(250,204,21,0.18));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(250,204,21,0.35);
+  border-radius: 24px;
+  padding: 24px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  transition: all 0.3s ease;
+}
 
+.rashi-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: linear-gradient(135deg, rgba(250,204,21,0.35), rgba(168,85,247,0.35));
+  box-shadow: 0 0 30px rgba(250,204,21,0.45);
+}
+
+.rashi-card h3 {
+  font-weight: 800;
+  font-size: 17px;
+  color: white;
+  text-shadow: 0 2px 8px black;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 12px rgba(250,204,21,0.5);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(250,204,21,0.9);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(250,204,21,0.5);
+  }
+}
+
+#rashifal-result {
+  animation: glow 2s infinite;
+}
+
+.falling-flower {
+  position: absolute;
+  top: -50px;
+  z-index: 1;
+  pointer-events: none;
+  animation: flowerFall linear forwards;
+}
+
+@keyframes flowerFall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
 function showRashi(sign) {
 
   const resultBox = document.getElementById("rashifal-result");
   const title = document.getElementById("rashi-title");
   const text = document.getElementById("rashi-text");
 
+  const rashis = {
+    aries: {
+      title: "♈ Aries",
+      text: "Today is lucky for career growth and success. Your courage will help you take the right step. Avoid anger and trust your inner power."
+    },
+    taurus: {
+      title: "♉ Taurus",
+      text: "Financial stability and peace will stay strong today. Stay patient, avoid unnecessary stress and focus on long-term comfort."
+    },
+    gemini: {
+      title: "♊ Gemini",
+      text: "Communication skills will help you succeed today. Your words can open new opportunities, but focus on one thing at a time."
+    },
+    cancer: {
+      title: "♋ Cancer",
+      text: "Emotional healing and peace surround you today. Family support and inner intuition will guide you in the right direction."
+    },
+    leo: {
+      title: "♌ Leo",
+      text: "Confidence and leadership will shine brightly today. Your presence may attract appreciation and positive attention."
+    },
+    virgo: {
+      title: "♍ Virgo",
+      text: "A productive and balanced day awaits you. Planning, discipline and practical decisions will bring good results."
+    },
+    libra: {
+      title: "♎ Libra",
+      text: "Love and harmony will improve your mood today. Balance your thoughts and avoid overthinking small matters."
+    },
+    scorpio: {
+      title: "♏ Scorpio",
+      text: "Your intuition will guide you towards success. Keep your plans private and move with patience and confidence."
+    },
+    sagittarius: {
+      title: "♐ Sagittarius",
+      text: "Adventure and positivity will brighten your day. Learning something new may bring inspiration and happiness."
+    },
+    capricorn: {
+      title: "♑ Capricorn",
+      text: "Hard work today will bring future rewards. Stay consistent, avoid pressure and trust your disciplined nature."
+    },
+    aquarius: {
+      title: "♒ Aquarius",
+      text: "Creative ideas and innovation will help you grow. Your unique thinking can create a positive breakthrough."
+    },
+    pisces: {
+      title: "♓ Pisces",
+      text: "Spiritual energy and inner peace are strong today. Meditation, prayer or quiet time will bring emotional clarity."
+    }
+  };
+
+  title.innerHTML = rashis[sign].title;
+  text.innerHTML = rashis[sign].text;
   resultBox.classList.remove("hidden");
-
-  if(sign === "aries") {
-    title.innerHTML = "♈ Aries";
-    text.innerHTML = "Today is lucky for career growth and success.";
-  }
-
-  if(sign === "taurus") {
-    title.innerHTML = "♉ Taurus";
-    text.innerHTML = "Financial stability and peace will stay strong today.";
-  }
-
-  if(sign === "gemini") {
-    title.innerHTML = "♊ Gemini";
-    text.innerHTML = "Communication skills will help you succeed today.";
-  }
-
-  if(sign === "cancer") {
-    title.innerHTML = "♋ Cancer";
-    text.innerHTML = "Emotional healing and peace surround you today.";
-  }
-
-  if(sign === "leo") {
-    title.innerHTML = "♌ Leo";
-    text.innerHTML = "Confidence and leadership will shine brightly today.";
-  }
-
-  if(sign === "virgo") {
-    title.innerHTML = "♍ Virgo";
-    text.innerHTML = "A productive and balanced day awaits you.";
-  }
-
-  if(sign === "libra") {
-    title.innerHTML = "♎ Libra";
-    text.innerHTML = "Love and harmony will improve your mood today.";
-  }
-
-  if(sign === "scorpio") {
-    title.innerHTML = "♏ Scorpio";
-    text.innerHTML = "Your intuition will guide you towards success.";
-  }
-
-  if(sign === "sagittarius") {
-    title.innerHTML = "♐ Sagittarius";
-    text.innerHTML = "Adventure and positivity will brighten your day.";
-  }
-
-  if(sign === "capricorn") {
-    title.innerHTML = "♑ Capricorn";
-    text.innerHTML = "Hard work today will bring future rewards.";
-  }
-
-  if(sign === "aquarius") {
-    title.innerHTML = "♒ Aquarius";
-    text.innerHTML = "Creative ideas and innovation will help you grow.";
-  }
-
-  if(sign === "pisces") {
-    title.innerHTML = "♓ Pisces";
-    text.innerHTML = "Spiritual energy and inner peace are strong today.";
-  }
 }
 
+function playLuckyGame() {
+
+  const colors = ["Gold", "Red", "White", "Purple", "Green", "Yellow", "Sky Blue", "Pink"];
+  const numbers = [1, 2, 3, 5, 6, 7, 8, 9];
+
+  const messages = [
+    "🕉️ Guru Kripa is blessing your path today.",
+    "💰 Wealth and abundance are moving towards you.",
+    "❤️ Love and harmony will increase in your life.",
+    "🚀 A new opportunity is coming soon.",
+    "🌙 Your prayers are being heard by the universe.",
+    "🔱 Divine protection surrounds you.",
+    "⭐ Today is lucky for new beginnings.",
+    "🎉 Unexpected good news may arrive soon."
+  ];
+
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+  document.getElementById("gameResult").classList.remove("hidden");
+
+  document.getElementById("gameText").innerHTML = `
+    🎨 <b>Lucky Color:</b> ${randomColor}<br>
+    🔢 <b>Lucky Number:</b> ${randomNumber}<br>
+    🕉️ <b>Divine Message:</b> ${randomMessage}<br><br>
+    🌟 Keep faith, stay positive and move forward with confidence.
+  `;
+}
+
+function startFlowerFall() {
+  const container = document.getElementById("flowerFall");
+  const flowers = ["🌸", "🌼", "🌺", "✨", "💫", "🌹"];
+
+  setInterval(() => {
+    const flower = document.createElement("div");
+    flower.className = "falling-flower";
+    flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.fontSize = Math.random() * 18 + 18 + "px";
+    flower.style.animationDuration = Math.random() * 4 + 5 + "s";
+
+    container.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 9000);
+
+  }, 450);
+}
+
+startFlowerFall();
 </script>
-       
+
 
         <section id="services" class="py-20 px-4 section-bg-base fade-in-section">
              <div class="container mx-auto text-center">
@@ -1134,7 +1269,7 @@ function showRashi(sign) {
         <section id="about" class="py-20 px-4 section-bg-base fade-in-section">
              <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/3 text-center md:text-left">
-                    <img src="images/Manasvi.jpeg" alt="[Your Name/Astrologer Name]" class="rounded-full shadow-lg mx-auto md:mx-0 w-64 h-64 md:w-full md:h-auto max-w-xs border-4 accent-red-border object-cover hover-effect">
+                    <img src="https://i.pinimg.com/736x/65/20/f8/6520f84dd398620b95488c1f2f0426fb.jpg" alt="[Your Name/Astrologer Name]" class="rounded-full shadow-lg mx-auto md:mx-0 w-64 h-64 md:w-full md:h-auto max-w-xs border-4 accent-red-border object-cover hover-effect">
                 </div>
                 <div class="md:w-2/3 text-center md:text-left">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Meet Your <span class="accent-gold">Jyotishi</span></h2>
@@ -1146,8 +1281,7 @@ function showRashi(sign) {
             </div>
         </section>
 
-        ```html
-<section id="contact" class="py-20 px-4 section-bg-alt fade-in-section">
+        <section id="contact" class="py-20 px-4 section-bg-alt fade-in-section">
 
 <div class="container mx-auto max-w-3xl text-center">
 
@@ -1191,34 +1325,45 @@ Consultation Fee: ₹499
 
 <div class="grid md:grid-cols-2 gap-4">
 
-<input type="text" id="userName"
-placeholder="Your Name"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="userName" class="field-label">Your Name <span>*</span></label>
+<input type="text" id="userName" placeholder="Your Name" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="tel" id="userPhone"
-placeholder="Phone Number"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="userPhone" class="field-label">Phone Number <span>*</span></label>
+<input type="tel" id="userPhone" placeholder="Phone Number" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="date" id="consultDate"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="consultDate" class="field-label">Consultation Date <span>*</span></label>
+<input type="date" id="consultDate" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="time" id="consultTime"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="consultTime" class="field-label">Consultation Time <span>*</span></label>
+<input type="time" id="consultTime" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="date" id="birthDate"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="birthDate" class="field-label">Date of Birth <span>*</span></label>
+<input type="date" id="birthDate" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="time" id="birthTime"
-class="text-sm rounded-lg block w-full p-3">
+<div>
+<label for="birthTime" class="field-label">Birth Time <span>*</span></label>
+<input type="time" id="birthTime" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<input type="text" id="birthPlace"
-placeholder="Birth Place"
-class="text-sm rounded-lg block w-full p-3 md:col-span-2">
+<div class="md:col-span-2">
+<label for="birthPlace" class="field-label">Birth Place / City <span>*</span></label>
+<input type="text" id="birthPlace" placeholder="Enter valid city name e.g. Delhi, Mumbai" list="cityList" class="text-sm rounded-lg block w-full p-3">
+</div>
 
-<textarea id="userQuestion"
-rows="4"
-placeholder="Your Question"
-class="text-sm rounded-lg block w-full p-3 md:col-span-2"></textarea>
+<div class="md:col-span-2">
+<label for="userQuestion" class="field-label">Your Question <span>*</span></label>
+<textarea id="userQuestion" rows="4" placeholder="Your Question" class="text-sm rounded-lg block w-full p-3"></textarea>
+</div>
 
 </div>
 
@@ -1333,6 +1478,16 @@ const birthTime = document.getElementById("birthTime").value;
 const birthPlace = document.getElementById("birthPlace").value;
 const question = document.getElementById("userQuestion").value;
 
+if (!name || !phone || !consultDate || !consultTime || !birthDate || !birthTime || !birthPlace || !question) {
+alert("Please fill all booking details.");
+return;
+}
+
+if (!isValidCityName(birthPlace)) {
+alert("Invalid Birth Place. Please enter a valid city name like Delhi, Mumbai, Pune, Jaipur.");
+return;
+}
+
 const message =
 `New Consultation Booking
 
@@ -1348,7 +1503,7 @@ Birth Place: ${birthPlace}
 
 Question: ${question}
 
-Fee: ₹199`;
+Fee: ₹499`;
 
 window.open(
 `https://wa.me/918484013977?text=${encodeURIComponent(message)}`,
@@ -1358,7 +1513,7 @@ window.open(
 }
 
 </script>
-```
+
 
     <a href="https://wa.me/8484013977" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -1367,8 +1522,7 @@ window.open(
     <footer>
         <div class="container mx-auto text-center text-sm">
             <div class="mb-4">
-                 <a href="https://www.instagram.com/manasvi_bharadwaj__?igsh=ZGdqcW5rMjluMTJ6&utm_source=qr" aria-label="Instagram" class="mx-2 hover:accent-red transition duration-200"><i class="fab fa-instagram fa-lg"></i></a>
-                 
+                 <a href="https://www.instagram.com/astro_shree25_/" target="_blank" aria-label="Instagram" class="mx-2 hover:accent-red transition duration-200"><i class="fab fa-instagram fa-lg"></i></a>
                  <a href="wa.me/+918484013977" aria-label="Whatsapp" class="mx-2 hover:accent-red transition duration-200"><i class="fab fa-whatsapp fa-lg"></i></a>
             </div>
             <p>&copy; 2024 Astro-Shree - Manasvi Bharadwaj. All Rights Reserved.</p>
@@ -1609,14 +1763,14 @@ window.open(
             const showcaseTrack = document.querySelector('#service-image-slider .slider-track');
             if (showcaseTrack) {
                 showcaseTrack.innerHTML = `
-                    <div class="slider-slide px-2"> <img src="/9.png" alt="Match Making Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/3.png" alt="Match Making Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/4.png" alt="Vastu Consultation Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/5.png" alt="Gemstone Guidance Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/7.png" alt="Puja Services Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/9.png" alt="Numerology Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/10.png" alt="Career Guidance Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
-                    <div class="slider-slide px-2"> <img src="/4.png" alt="Health Astrology Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Match Making Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="Match Making Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Vastu Consultation Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80" alt="Gemstone Guidance Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=900&q=80" alt="Puja Services Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Numerology Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Career Guidance Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
+                    <div class="slider-slide px-2"> <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Health Astrology Showcase" class="w-full h-auto object-cover rounded-lg shadow-md"> </div>
                 `;
                 initializeSlider('service-image-slider', { interval: 4000 });
             }
@@ -1716,7 +1870,7 @@ window.open(
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const headerOffset = document.qSelector('header')?.offsetHeight || 70; // Get header height dynamically
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 70; // Get header height dynamically
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -1732,7 +1886,7 @@ window.open(
         faqItems.forEach(item => { /* ... listener logic ... */
              item.addEventListener('click', () => {
                 const answer = item.nextElementSibling;
-                const allAnswers = document.qSelectorAll('.faq-answer');
+                const allAnswers = document.querySelectorAll('.faq-answer');
                 const wasOpen = answer.classList.contains('open'); // Check if it was already open
 
                 // Close all answers first
@@ -1830,6 +1984,50 @@ function goToServices() {
     services.scrollIntoView({ behavior: "smooth" });
   }
 }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (!targetElement) return;
+
+      e.preventDefault();
+      const headerOffset = header ? header.offsetHeight + 10 : 80;
+      const topPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({ top: topPosition, behavior: "smooth" });
+
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileBtn = document.getElementById("mobile-menu-button");
+      if (mobileMenu) mobileMenu.classList.add("hidden");
+      if (mobileBtn) mobileBtn.classList.remove("active");
+    });
+  });
+
+  document.querySelectorAll(".faq-question").forEach(function (question) {
+    question.addEventListener("click", function () {
+      const answer = question.nextElementSibling;
+      const wasOpen = answer && answer.classList.contains("open");
+
+      document.querySelectorAll(".faq-answer").forEach(function (item) {
+        item.classList.remove("open");
+        if (item.previousElementSibling) item.previousElementSibling.classList.remove("open");
+      });
+
+      if (answer && !wasOpen) {
+        answer.classList.add("open");
+        question.classList.add("open");
+      }
+    });
+  });
+});
 </script>
 
 </body>
